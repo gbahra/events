@@ -2,10 +2,8 @@ var express = require('express');
 var router = express.Router();
 var eventsController = require('../controllers/events');
 var usersController = require('../controllers/users');
-// var eventsApiController = require('../controllers/api/events');
 
 //users
-
  router.route('/users')
       .post(usersController.create);
 
