@@ -2,7 +2,7 @@ var express = require("express");
 var app = express();
 var port = process.env.PORT || 3000;
 var mongoose = require('mongoose');
-var router = require('./config/routes');
+//var router = require('./config/routes');
 var layouts = require('express-ejs-layouts');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
@@ -12,6 +12,7 @@ app.listen(port, function() {
   console.log("The server is on and listening on port " + port);
 })
 
+console.log( 'api key ' + JSON.stringify(process.env.TOKENVARNAME))
 app.use(flash());
 
 app.use(function(req, res, next){
@@ -44,6 +45,6 @@ app.use(express.static('public'));
 // use express layouts middleware too
 app.use(layouts);
 
-app.use(router);
+//app.use(router);
 
 module.exports = app;

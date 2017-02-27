@@ -1,5 +1,5 @@
 var User= require("../models/user");
-var Shoe= require("../models/shoes");
+
 var bodyParser = require('body-parser');
 
  // router.route('/users')
@@ -16,11 +16,11 @@ var bodyParser = require('body-parser');
  //      .get(usersController.show)
  //      .delete(usersController.delete);
 
-modules.export = {
-  show : showUsers,
-  new : newUsers,
-  create : createUsers,
-  edit : editUsers,
-  update : updateUsers,
-  delete : deleteUsers
-}
+// module.exports = {
+//   show : showUsers,
+//   new : newUsers,
+//   create : createUsers,
+//   edit : editUsers,
+//   update : updateUsers,
+//   delete : deleteUsers
+// }

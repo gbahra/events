@@ -1,5 +1,4 @@
-var User= require("../models/user");
-var Shoe= require("../models/shoes");
+var User= require("../models/User");
 var bodyParser = require('body-parser');
 
 
@@ -10,7 +9,7 @@ var bodyParser = require('body-parser');
 //       .get(eventsController.show);
 
 
-module.exports = {
-  index : indexEvents,
-  show : showEvents
-}
+// module.exports = {
+//   index : indexEvents,
+//   show : showEvents
+// }
