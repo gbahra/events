@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html ng-app='events'>
 <head>
-  <title>criminals</title>
+  <title>events</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
   <script type="text/javascript" src = 'js/app.js'></script>
- <!--  // <script type="text/javascript" src = 'js/factories/events.fact.js'></script>
-  // <script type="text/javascript" src = 'js/controllers/events.ctrl.js'></script> -->
+  <!-- // <script type="text/javascript" src = 'js/factories/events.fact.js'></script> -->
+  <script type="text/javascript" src = 'js/controllers/events.ctrl.js'></script>
 </head>
 <body ng-controller = "eventController as event">
   <h1>hi</h1>
@@ -15,12 +15,12 @@
   <nav>
     <div id = 'searchBar'>
       <ul>
-        <li ng-click = ''>home</li>
-        <li ng-click = ''>edit profile</li>
-        <li ng-click = ''>favourites</li>
+        <li><a ui-sref="home">home</a></li>
+        <li><a ui-sref="edit">edit profile</a></li>
+        <li><a ui-sref="favourites">favourites</a></li>
       </ul>
     </div>
-    <section ></section>
+    <section  ui-view></section>
   </nav>
 
  <!--  <section ui-view ng-controller = "criminalController as criminal"></section> -->

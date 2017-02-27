@@ -1,16 +1,16 @@
 angular
   .module('events',['ui.router'])
-  // .constant('API', 'http://localhost:3000')
-  // .config(MainRouter)
+  .config(MainRouter)
+// .constant('API', 'http://localhost:3000')
 
 function MainRouter($stateProvider, $urlRouterProvider){
   $stateProvider
     .state('authRequired',{
-      url: '/authRequired',
+      url: '/user/authRequired',
       templateUrl: '/states/authRequired.html'
     })
     .state('new',{
-      url: '/new',
+      url: '/user/new',
       templateUrl: '/states/newUser.html'
     })
     .state('home',{
@@ -18,15 +18,15 @@ function MainRouter($stateProvider, $urlRouterProvider){
       templateUrl: '/states/home.html'
     })
     .state('searchResult',{
-      url: '/searchResult',
+      url: '/event/:id',
       templateUrl: '/states/searchResult.html'
     })
     .state('edit',{
-      url: '/criminals/:id/edit',
+      url: 'user/:id/edit',
       templateUrl: '/states/editUser.html'
     })
      .state('favourites',{
-      url: '/favourites',
+      url: 'user/:id/favourites',
       templateUrl: '/states/favourites.html'
     })
     $urlRouterProvider.otherwise('/')
