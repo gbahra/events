@@ -16,9 +16,13 @@ console.log( 'api key ' + process.env.TOKENVARNAME)
 mongoose.connect('mongodb://localhost/shoes', function() {
   console.log('database connected.')
 })
-
 app.set('view engine' , 'ejs');
 app.use(express.static('public'));
+
 app.use(layouts);
+app.get('/', function indexEvents(req,res){
+  res.render('../views/layout')
+})
+
 app.use(router);
 module.exports = app;

@@ -1,12 +1,11 @@
 var express = require('express');
 var router = express.Router();
-var eventsController = require('../controllers/events');
+
 var usersController = require('../controllers/users');
 
 //users
 
-router.route('/')
-  .get(eventsController.index);
+
 
 // router.route('api/users')
 //   .post(usersController.create);

@@ -1,7 +1,8 @@
 angular
   .module('criminals')
-  .controller('eventsController', eventsController)
+  .controller('eventController', eventController)
 
-function eventsController(Criminal, $stateParams, $state){
+function eventController(Event, $stateParams, $state){
+
 
 }

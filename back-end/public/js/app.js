@@ -5,22 +5,29 @@ angular
 
 function MainRouter($stateProvider, $urlRouterProvider){
   $stateProvider
-    .state('home',{
-      url: '/criminals',
-      templateUrl: '/states/home.html'
+    .state('authRequired',{
+      url: '/authRequired',
+      templateUrl: '/states/authRequired.html'
     })
     .state('new',{
-      url: '/criminals/new',
-      templateUrl: '/states/new.html'
+      url: '/new',
+      templateUrl: '/states/newUser.html'
     })
-    .state('show',{
-      url: '/criminals/:id',
-      templateUrl: '/states/show.html'
+    .state('home',{
+      url: '/home',
+      templateUrl: '/states/home.html'
+    })
+    .state('searchResult',{
+      url: '/searchResult',
+      templateUrl: '/states/searchResult.html'
     })
     .state('edit',{
       url: '/criminals/:id/edit',
-      templateUrl: '/states/edit.html'
+      templateUrl: '/states/editUser.html'
     })
-
+     .state('favourites',{
+      url: '/favourites',
+      templateUrl: '/states/favourites.html'
+    })
     $urlRouterProvider.otherwise('/')
 }
