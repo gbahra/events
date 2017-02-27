@@ -4,19 +4,13 @@ var eventsController = require('../controllers/events');
 var usersController = require('../controllers/users');
 
 //users
- router.route('/users')
-      .post(usersController.create);
+router.route('api/users')
+  .post(usersController.create);
 
- router.route('/users/new')
-      .get(usersController.new);
-
- router.route('/users/edit/:id')
-      .get(usersController.edit);
-
- router.route('users/:id')
-      .patch(usersController.update)
-      .get(usersController.show)
-      .delete(usersController.delete);
+router.route('api/users/:id')
+  .patch(usersController.update)
+  .get(usersController.show)
+  .delete(usersController.delete);
 
  // API section
  // router.route('/api/events')
@@ -30,10 +24,6 @@ var usersController = require('../controllers/users');
  //   .delete(eventsApiController.delete);
 
 // events
-router.route('/')
-      .get(eventsController.index);
 
-router.route('/:id')
-      .get(eventsController.show);
 
 module.exports = router;
