@@ -2,7 +2,7 @@ angular
   .module('events')
   .controller('eventController',eventController)
 
-function eventController(Event, $stateParams, $state){
+function eventController($stateParams, $state){
   var self = this;
   return self
 
