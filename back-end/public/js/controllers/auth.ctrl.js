@@ -32,6 +32,5 @@ angular
     function resetCredentials(){
       self.email = "";
       self.password = "";
-
     }
   }

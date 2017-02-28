@@ -34,11 +34,11 @@ function MainRouter($stateProvider, $urlRouterProvider){
     })
      .state('favourites',{
       url: '/favourites',
-      templateUrl: '/states/favourites.html'
+      templateUrl: 'states/favourites.html'
     })
     .state('signUp',{
       url: '/signUp',
-      templateUrl: '/states/signup.html'
+      templateUrl: 'states/signup.html'
     })
     .state('login',{
       url: '/login',

@@ -9,6 +9,8 @@
   <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
 
   <script type="text/javascript" src = 'js/app.js'></script>
+  <script type="text/javascript" src = 'js/factories/auth.fact.js'></script>
+  <script type="text/javascript" src = 'js/controllers/auth.ctrl.js'></script>
   <script type="text/javascript" src = 'js/factories/events.fact.js'></script>
   <script type="text/javascript" src = 'js/controllers/events.ctrl.js'></script>
 </head>
@@ -23,7 +25,7 @@
         <li><a ui-sref="favourites">favourites</a></li>
       </ul>
     </div>
-    <section ui-view></section>
+    <section ng-controller='authenticationController as auth' ui-view></section>
   </nav>
 </body>
 </html>
