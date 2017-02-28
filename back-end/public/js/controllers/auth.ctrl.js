@@ -4,10 +4,11 @@ angular
 
   function authenticationController(Auth, $state){
     var self = this;
-    self.createUser = function(){
+    self.createUser = function(uid){
+
       Auth.$createUserWithEmailAndPassword(self.email, self.password).then(function(user){
         resetCredentials();
-        console.log(user)
+
       }).catch(function(error){
         self.error = error;
       })
@@ -17,7 +18,7 @@ angular
         $state.go('home')
     }
     Auth.$onAuthStateChanged(function(user){
-      console.log(user);
+
       self.user = user;
     })
 

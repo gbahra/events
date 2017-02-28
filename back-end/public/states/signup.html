@@ -1,4 +1,4 @@
-<section ng-if"!auth.user">
+<section ng-if="!auth.user">
   <div>
     Email: <input type="text" ng-model="auth.email">
   </div>
@@ -7,7 +7,7 @@
     Password: <input type="text" ng-model="auth.password">
   </div>
 
-  <button ng-click='auth.createUser()'>Create User</button>
+  <button ng-click='auth.createUser(auth.user.uid)'>Create User</button>
 
   <p ng-if="auth.error">
     Error: {{auth.error}}

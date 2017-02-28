@@ -1,15 +1,31 @@
 var User= require("../models/User");
 var bodyParser = require('body-parser');
 
-
-// router.route('/')
-//       .get(eventsController.index);
-
-// router.route('/:id')
-//       .get(eventsController.show);
+function indexUsers(req, res){
 
 
-// module.exports = {
-//   index : indexEvents,
-//   show : showEvents
-// }
+}
+
+function showUsers(req, res){
+
+}
+
+function createUsers(req, res){
+
+}
+
+function updateUsers(req, res){
+
+}
+
+function deleteUsers(req, res){
+
+}
+
+module.exports = {
+  index : indexUsers,
+  show : showUsers,
+  create : createUsers,
+  update : updateUsers,
+  delete : deleteUsers
+}

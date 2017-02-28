@@ -4,16 +4,14 @@ var router = express.Router();
 var usersController = require('../controllers/users');
 
 //users
+router.route('api/users')
+  .get(usersController.index)
+  .post(usersController.create);
 
-
-
-// router.route('api/users')
-//   .post(usersController.create);
-
-// router.route('api/users/:id')
-//   .patch(usersController.update)
-//   .get(usersController.show)
-//   .delete(usersController.delete);
+router.route('api/users/:id')
+  .patch(usersController.update)
+  .get(usersController.show)
+  .delete(usersController.delete);
 
  // API section
  // router.route('/api/events')
