@@ -24,7 +24,7 @@ angular
     self.signIn = function(){
       Auth.$signInWithEmailAndPassword(self.email, self.password).then(function(user){
         resetCredentials();
-        $state.go('secret')
+        $state.go('home')
       }).catch(function(error){
         self.error = error;
       })

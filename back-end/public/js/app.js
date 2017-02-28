@@ -1,5 +1,5 @@
 angular
-  .module('events',['ui.router'])
+  .module('events',['ui.router', 'firebase'])
   .constant('API', 'http://localhost:3000')
   .config(MainRouter)
   .run(AuthCatcher)
@@ -11,9 +11,15 @@ function AuthCatcher($rootScope, $state){
 }
 
 function MainRouter($stateProvider, $urlRouterProvider){
+
+  var authRequired = {
+    currentAuth: function(Auth){
+      return Auth.$requireSignIn()
+    }
+  }
   $stateProvider
     .state('authRequired',{
-      url: '/user/authRequired',
+      url: '/authRequired',
       templateUrl: 'states/authRequired.html'
     })
     .state('new',{
@@ -22,19 +28,22 @@ function MainRouter($stateProvider, $urlRouterProvider){
     })
     .state('home',{
       url: '/home',
-      templateUrl: 'states/home.html'
+      templateUrl: 'states/home.html',
     })
     .state('searchResult',{
       url: '/event/:id',
-      templateUrl: 'states/searchResult.html'
+      templateUrl: 'states/searchResult.html',
+      resolve: authRequired
     })
     .state('edit',{
       url: 'user/:id/edit',
-      templateUrl: 'states/editUser.html'
+      templateUrl: 'states/editUser.html',
+      resolve: authRequired
     })
      .state('favourites',{
       url: '/favourites',
-      templateUrl: 'states/favourites.html'
+      templateUrl: 'states/favourites.html',
+      resolve: authRequired
     })
     .state('signUp',{
       url: '/signUp',
