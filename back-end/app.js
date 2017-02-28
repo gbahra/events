@@ -13,7 +13,7 @@ app.listen(port, function() {
 })
 console.log( 'api key ' + process.env.TOKENVARNAME)
 
-mongoose.connect('mongodb://localhost/shoes', function() {
+mongoose.connect('mongodb://localhost/event', function() {
   console.log('database connected.')
 })
 app.set('view engine' , 'ejs');
