@@ -22,11 +22,13 @@ function showUsers(req, res){
 }
 
 function createUsers(req, res){
+  console.log(req.body)
   User.create(req.body, function(err, user){
-    res.status(201).json({
-    user: user
-
-    });
+    if (err) {
+      console.log(err)
+      return res.status(500).json(err)
+    }
+    res.status(201).json({ user: user });
   });
 
 

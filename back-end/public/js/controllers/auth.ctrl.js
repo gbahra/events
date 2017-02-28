@@ -6,7 +6,6 @@ angular
     self.newUser = {};
     self.createUser = function(){
       Auth.$createUserWithEmailAndPassword(self.email, self.password).then(function(user){
-        resetCredentials();
         User.create({
           uid: user.uid,
           first_name: self.first_name,
@@ -15,6 +14,8 @@ angular
           mobile_number: self.mobile_number,
           post_code: self.post_code
         }).then(function(response){
+          resetCredentials();
+
           self.newUser = {};
           $state.go('home')
         })

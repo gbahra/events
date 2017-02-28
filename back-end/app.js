@@ -6,6 +6,7 @@ var router = require('./config/routes');
 var ejs = require('ejs')
 // var layouts = require('express-ejs-layouts');
 var bodyParser = require('body-parser')
+var morgan = require('morgan')
 
 console.log( 'api key ' + process.env.TOKENVARNAME)
 
@@ -15,7 +16,7 @@ mongoose.connect('mongodb://localhost/event', function() {
 app.set('view engine' , 'ejs');
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }));
-
+app.use(morgan('dev'))
   // parse application/json
 app.use(bodyParser.json());
 
