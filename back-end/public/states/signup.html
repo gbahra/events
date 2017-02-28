@@ -1,0 +1,18 @@
+<section ng-if"!auth.user">
+<div>
+  Email: <input type="text" ng-model="auth.email">
+</div>
+
+<div>
+  Password: <input type="text" ng-model="auth.password">
+</div>
+
+<button ng-click='auth.createUser()'>Crteate User</button>
+
+<p ng-if="auth.error">
+  Error: {{auth.error}}
+</p>
+</section>
+  <section ng-if='auth.user'>
+    <h3>ur logged in </h3>
+  </section>
