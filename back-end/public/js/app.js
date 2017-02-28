@@ -1,6 +1,7 @@
 angular
   .module('events',['ui.router', 'firebase'])
   .constant('API', '/api')
+  .constant('api', 'http://www.skiddle.com/api/v1/')
   .config(MainRouter)
   .run(AuthCatcher)
 
