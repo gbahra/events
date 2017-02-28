@@ -1,6 +1,6 @@
 angular
   .module('events',['ui.router', 'firebase'])
-  .constant('API', 'http://localhost:3000')
+  .constant('API', '/api')
   .config(MainRouter)
   .run(AuthCatcher)
 

@@ -16,7 +16,7 @@ angular
           post_code: self.post_code
         }).then(function(response){
           self.newUser = {};
-          $state.go('home', {id:response.user.uid})
+          $state.go('home')
         })
       }).catch(function(error){
         self.error = error;
