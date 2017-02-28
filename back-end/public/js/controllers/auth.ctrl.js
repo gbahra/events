@@ -2,13 +2,16 @@ angular
   .module('events')
   .controller('authenticationController', authenticationController)
 
-  function authenticationController(Auth, $state){
+  function authenticationController(User, Auth, $state){
     var self = this;
-    self.createUser = function(uid){
-
+    self.newUser = {}
+    self.createUser = function(){
       Auth.$createUserWithEmailAndPassword(self.email, self.password).then(function(user){
         resetCredentials();
-
+        User.create(self.newUser).then(function(response){
+          self.newUser = {}
+          $state.go('home', {id:response.user.uid})
+        })
       }).catch(function(error){
         self.error = error;
       })
@@ -18,7 +21,6 @@ angular
         $state.go('home')
     }
     Auth.$onAuthStateChanged(function(user){
-
       self.user = user;
     })
 
