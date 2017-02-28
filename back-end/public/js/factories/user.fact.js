@@ -4,8 +4,8 @@ angular
 
 function userFactory(API, $http){
   return{
-    create: function(){
-      return $http.post(API+'api/users', newUser)
+    create: function(user){
+      return $http.post(API+'/api/users', user)
     }
   }
 }

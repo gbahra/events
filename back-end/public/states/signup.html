@@ -7,6 +7,20 @@
     Password: <input type="text" ng-model="auth.password">
   </div>
 
+  <div>
+    first name: <input type="text" ng-model="auth.first_name">
+  </div>
+
+  <div>
+    last name: <input type="text" ng-model="auth.last_name">
+  </div>
+  <div>
+    mobile number: <input type="Number" ng-model="auth.mobile_number">
+  </div>
+    <div>
+    postcode: <input type="text" ng-model="auth.postcode">
+  </div>
+
   <button ng-click='auth.createUser()'>Create User</button>
 
   <p ng-if="auth.error">

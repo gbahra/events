@@ -7,8 +7,7 @@ var UserSchema = new mongoose.Schema({
   email : {type: String, required:true},
   mobile_number : {type: Number, required:true},
   post_code : {type: String, required:true},
-  favourites: [{ type: mongoose.Schema.Types.ObjectId, ref: "Events" }]//double check the shoe in this line
-  //maybe have wallet
+  favourites: [{ type: mongoose.Schema.Types.ObjectId, ref: "Events" }]
 });
-//module.exports = mongoose.model('User' , UserSchema);
+module.exports = mongoose.model('User' , UserSchema);
 

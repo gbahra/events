@@ -23,11 +23,10 @@ function showUsers(req, res){
 
 function createUsers(req, res){
   User.create(req.body, function(err, user){
-    if(err) req.flash('error' , err.message);
-      res.status(201).json({
-      user: user,
-      message:created
-      });
+    res.status(201).json({
+    user: user
+
+    });
   });
 
 
@@ -41,7 +40,7 @@ function updateUsers(req, res){
     function(err , user){
       if(err) return res.status(500).send(err);
       res.status(204).json({
-        message:updated,
+
         user: user
       });
     }
