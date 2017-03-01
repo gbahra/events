@@ -1,5 +1,6 @@
 var User= require("../models/User");
 var bodyParser = require('body-parser');
+var request = require('request');
 
 function indexUsers(req, res){
   User.find({} , function(err, users) {
@@ -11,12 +12,19 @@ function indexUsers(req, res){
 }
 
 function showUsers(req, res){
-  User.findById(req.params.id , function(err, user) {
+  var resObj = {};
+  User.findOne({uid:req.params.id} , function(err, user) {
     if(!user) return res.status(404).send("Not found");
     if(err) return res.status(500).send(err);
-    res.status(200).json({
-      user: user
-    });
+    for(var i = 0; i<user.favourites.length; i++){
+      request('http://www.skiddle.com/api/v1/events/search/?api_key=' + process.env.TOKENVARNAME + '&keyword='+ user.favourites[i],
+        function (error, response, body) {
+          if (error) {console.log(error)}
+          resObj.push({i:response});
+        }
+      )
+    }
+    res.status(200).json(resObj);
   });
 
 }

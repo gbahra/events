@@ -2,7 +2,7 @@ angular
   .module('events')
   .controller('eventController',eventController)
 
-function eventController(Events, $stateParams, $state){
+function eventController(Auth, User, Events, $stateParams, $state){
   var self = this;
 
   self.getEvents = function(){
@@ -27,7 +27,13 @@ function eventController(Events, $stateParams, $state){
       }
     )
   }
-  self.getFavourite = function(){
+  self.getFavourites = function(){
+    self.fav = {}
+    var uid = Auth.$getAuth().uid
+    User.getFavourite(uid).then(function(response){
+      console.log(response)
+    })
+
 
   }
 }

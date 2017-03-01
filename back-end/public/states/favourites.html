@@ -1,5 +1,5 @@
 <h1>favourites</h1>
-<section ng-init = 'event.getEvent()'>
+<section ng-init = 'event.getFavourites()'>
   <img src='{{event.show.largeimageurl}}'>
   <p>{{event.show.eventname}}</p>
   <p>{{event.show.venue.town}}</p>
@@ -10,7 +10,4 @@
   </p>
   <p>{{event.show.date}}</p>
   <p>{{event.show.openingtimes.doorsopen}}</p>
-  <div ng-controller = 'userController as user'>
-    <button ng-click = 'user.favourite({ event: event.show[0].eventname})'>favourite</button>
-  </div>
 </section>

@@ -9,6 +9,9 @@ function userFactory(API, $http){
     },
     favourite: function(eventObj){
       return $http.patch(API+'/users/' + eventObj.uid, eventObj)
+    },
+    getFavourite: function(uid){
+      return $http.get(API+'/users/' + uid)
     }
   }
 }
