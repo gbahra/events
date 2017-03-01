@@ -20,13 +20,14 @@ function showUsers(req, res){
       request('http://www.skiddle.com/api/v1/events/search/?api_key=' + process.env.TOKENVARNAME + '&keyword='+ user.favourites[i],
         function (error, response, body) {
           if (error) {console.log(error)}
-          resObj.push({i:response});
+          //console.log(response.body);
+          resObj[i] = response.body
         }
       )
     }
-    res.status(200).json(resObj);
-  });
 
+  });
+  res.json(resObj)
 }
 
 function createUsers(req, res){
