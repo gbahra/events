@@ -14,7 +14,7 @@ router.route('/api/users/:id')
   .delete(usersController.delete);
 
 //events
-router.route('api/events')
+router.route('/api/events')
   .get(eventsController.index);
 
 module.exports = router;

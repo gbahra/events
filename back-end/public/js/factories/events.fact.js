@@ -5,7 +5,7 @@ angular
 function eventsFactory(API, $http){
   return{
     get: function(){
-      $http.get(API+'/events')
+     return $http.get(API+'/events')
     }
   }
 }
