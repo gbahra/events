@@ -8,5 +8,7 @@
   </div>
   <p>{{event.show.date}}</p>
   <p>{{event.show.openingtimes.doorsopen}}</p>
-  <button ng-click = 'favourite()'>favourite</button>
+  <div ng-controller = 'userController as user'>
+    <button ng-click = 'user.favourite({{event.show.eventname}})'>favourite</button>
+  </div>
 </section>
