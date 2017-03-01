@@ -7,8 +7,9 @@ function eventController(Events, $stateParams, $state){
 
   self.getEvent = function(){
     Events.get().then(function(response){
-      self.all = JSON.parse(response.data.body)
-      console.log(self.all.results[0])
+      var body = JSON.parse(response.data.body)
+      self.all = body.results
+      console.log(self.all)
     })
   }
   return self
