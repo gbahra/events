@@ -27,12 +27,4 @@ function eventController(Events, $stateParams, $state){
       }
     )
   }
-  self.favourite = function(){
-    Criminal.update(id, self.oneCriminal)
-      .then(function (response) {
-
-
-      })
-  }
-
 }

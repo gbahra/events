@@ -33,20 +33,24 @@ function createUsers(req, res){
 }
 
 function updateUsers(req, res){
-  console.log(req.params.event)
+  console.log(req.body.term)
 
-  // User.findByIdAndUpdate(
-  //   req.params.id,
-  //   { $set:  req.body },
-  //   { runValidators: true },
-  //   function(err , user){
-  //     if(err) return res.status(500).send(err);
-  //     res.status(204).json({
-  //       user: user
-  //     });
-  //   }
-  // );
-}
+//   User.findOneAndUpdate(
+//     {uid}
+//     ,function(err, user))
+//   }
+//   User.findByIdAndUpdate(
+//     req.params.id,
+//     { $set:  req.body },
+//     { runValidators: true },
+//     function(err , user){
+//       if(err) return res.status(500).send(err);
+//       res.status(204).json({
+//         user: user
+//       });
+//     }
+//   );
+ }
 
 function deleteUsers(req, res){
   User.findByIdAndRemove(req.params.id , function(err) {
