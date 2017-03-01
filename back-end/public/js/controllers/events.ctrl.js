@@ -14,12 +14,21 @@ function eventController(Events, $stateParams, $state){
 
   }
   self.getEvent = function(){
+    self.show = {}
+    console.log($stateParams.event)
     Events.show($stateParams.event).then(function(response){
         var body = JSON.parse(response.data.body)
-      self.event = body.results[0]
-      console.log(self.event)
+        var eventNameRexExp = new RegExp($stateParams.event, 'i')
+        self.show = body.results.filter(function (event) {
+          console.log(eventNameRexExp.test(event.eventname))
+          return eventNameRexExp.test(event.eventname)
+        })
+
       }
     )
+  }
+  self.favourite = function(){
+
   }
 
 }
