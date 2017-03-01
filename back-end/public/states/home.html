@@ -2,7 +2,9 @@
 <button ng-click = 'event.getEvent()'>YHHHH</button>
 <section ng-init = 'event.getEvent()'>
 <img src='{{event.all.results[0].largeimageurl}}'>
-
-
-
+<p><a ui-sref="show">{{event.all.results[0].eventname}}</a></p>
+<p>{{event.all.results[0].venue.town}}</p>
+<p>{{event.all.results[0].artists[0].name}}</p>
+<p>{{event.all.results[0].date}}</p>
+<p>{{event.all.results[0].openingtimes.doorsopen}}</p>
 </section>
