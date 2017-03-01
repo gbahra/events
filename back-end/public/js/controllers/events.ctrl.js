@@ -31,7 +31,7 @@ function eventController(Auth, User, Events, $stateParams, $state){
     self.fav = {}
     var uid = Auth.$getAuth().uid
     User.getFavourite(uid).then(function(response){
-      console.log(response)
+      console.log(response.favourites)
     })
 
 
