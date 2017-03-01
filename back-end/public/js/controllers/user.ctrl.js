@@ -7,8 +7,9 @@ function userController(User, $stateParams, $state){
 
   self.favourite = function(event){
     console.log(event)
-
-
+    User.favourite(event).then(response){
+      console.log(response)
+    }
   }
 
 }

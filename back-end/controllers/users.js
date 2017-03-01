@@ -1,5 +1,4 @@
 var User= require("../models/User");
-var Event= require("../models/Event");
 var bodyParser = require('body-parser');
 
 function indexUsers(req, res){
@@ -34,17 +33,19 @@ function createUsers(req, res){
 }
 
 function updateUsers(req, res){
-  User.findByIdAndUpdate(
-    req.params.id,
-    { $set:  req.body },
-    { runValidators: true },
-    function(err , user){
-      if(err) return res.status(500).send(err);
-      res.status(204).json({
-        user: user
-      });
-    }
-  );
+  console.log(req.params.event)
+
+  // User.findByIdAndUpdate(
+  //   req.params.id,
+  //   { $set:  req.body },
+  //   { runValidators: true },
+  //   function(err , user){
+  //     if(err) return res.status(500).send(err);
+  //     res.status(204).json({
+  //       user: user
+  //     });
+  //   }
+  // );
 }
 
 function deleteUsers(req, res){

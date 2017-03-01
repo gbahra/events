@@ -5,7 +5,11 @@ angular
 function userFactory(API, $http){
   return{
     create: function(user){
-      return $http.post(API+'/users')
+      return $http.post(API+'/users', user)
+    },
+    favourite: function(event){
+      return $http.update(API+'/users/' + event)
+
     }
   }
 }

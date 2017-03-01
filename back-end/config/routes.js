@@ -13,6 +13,7 @@ router.route('/api/users/:id')
   .get(usersController.show)
   .delete(usersController.delete);
 
+
 //events
 router.route('/api/events')
   .get(eventsController.index);
