@@ -1,1 +1,25 @@
 <h1>edit profile</h1>
+
+<div>
+    Email: <input type="text" ng-model="auth.email">
+  </div>
+
+  <div>
+    Password: <input type="text" ng-model="auth.password">
+  </div>
+
+  <div>
+    first name: <input type="text" ng-model="auth.first_name">
+  </div>
+
+  <div>
+    last name: <input type="text" ng-model="auth.last_name">
+  </div>
+  <div>
+    mobile number: <input type="Number" ng-model="auth.mobile_number">
+  </div>
+    <div>
+    postcode: <input type="text" ng-model="auth.post_code">
+  </div>
+
+  <button ng-click='auth.createUser()'>Create User</button>

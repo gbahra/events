@@ -1,11 +1,13 @@
 <h1>home</h1>
 <section ng-init = 'event.getEvent()'>
-<div ng-repeat = 'e in event.all'>  <img src='{{e.largeimageurl}}'>
-  <p><a ui-sref="show">{{e.eventname}}</a></p>
-  <p>{{e.venue.town}}</p>
-  <p>{{e.artists[0].name}}</p>
-  <p>{{e.date}}</p>
-  <p>{{e.openingtimes.doorsopen}}</p>
-</div>
-
+  <div ng-repeat = 'e in event.all'>
+    <img src='{{e.largeimageurl}}'>
+    <p><a ui-sref="show">{{e.eventname}}</a></p>
+    <p>{{e.venue.town}}</p>
+    <div ng-repeat = 'artist in e.artists'>
+      <p><span>{{artist.name}}</span></p>
+    </div>
+    <p>{{e.date}}</p>
+    <p>{{e.openingtimes.doorsopen}}</p>
+  </div>
 </section>
