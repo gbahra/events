@@ -1,7 +1,7 @@
 <h1>edit profile</h1>
-<section ng-></section>
-<form ng-submit = ></form>
-<div>
+<section ng-controller = 'userController as user'></section>
+<form ng-submit = 'user.updateUser()'>
+  <div>
     Email: <input type="text" ng-model="auth.email">
   </div>
 
@@ -22,5 +22,6 @@
     <div>
     postcode: <input type="text" ng-model="auth.post_code">
   </div>
+  <input type="submit" vaule="Update">
 
-  <button ng-click='auth.createUser()'>Create User</button>
+  </form>

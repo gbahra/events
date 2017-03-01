@@ -9,6 +9,9 @@ function eventsFactory(API, $http){
     },
     show: function(event){
      return $http.get(API+'/events/' + event)
+    },
+    update: function(uid){
+      return $http.update(API+'/users/' + uid)
     }
   }
 }

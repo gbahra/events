@@ -37,7 +37,7 @@ function MainRouter($stateProvider, $urlRouterProvider){
       resolve: authRequired
     })
     .state('edit',{
-      url: 'user/:id/edit',
+      url: 'user/:uid',
       templateUrl: 'states/editUser.html',
       resolve: authRequired
     })

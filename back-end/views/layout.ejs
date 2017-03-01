@@ -24,7 +24,7 @@
       <br>
       <ul>
         <li><a href = '#' ui-sref="home">home</a></li>
-        <li><a href = '#' ui-sref="edit">edit profile</a></li>
+        <li><a href = '#' ui-sref="edit({uid: auth.uid})">edit profile</a></li>
         <li><a href = '#' ui-sref="favourites">favourites</a></li>
         <li> <a href = '#' ng-click = 'auth.signOut()'>signout</a></li>
       </ul>

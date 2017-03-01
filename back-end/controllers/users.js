@@ -1,4 +1,5 @@
 var User= require("../models/User");
+var Event= require("../models/Event");
 var bodyParser = require('body-parser');
 
 function indexUsers(req, res){
@@ -30,8 +31,6 @@ function createUsers(req, res){
     }
     res.status(201).json({ user: user });
   });
-
-
 }
 
 function updateUsers(req, res){
@@ -42,12 +41,10 @@ function updateUsers(req, res){
     function(err , user){
       if(err) return res.status(500).send(err);
       res.status(204).json({
-
         user: user
       });
     }
   );
-
 }
 
 function deleteUsers(req, res){
