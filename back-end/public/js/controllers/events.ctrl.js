@@ -18,13 +18,16 @@ function eventController(Events, $stateParams, $state){
     console.log($stateParams.event)
     Events.show($stateParams.event).then(function(response){
         var body = JSON.parse(response.data.body)
-        var eventNameRexExp = new RegExp($stateParams.event, 'i')
-        self.show = body.results.filter(function (event) {
-          console.log(eventNameRexExp.test(event.eventname))
-          return eventNameRexExp.test(event.eventname)
-        })
-
+        self.show = body.results[0];//NOT A REAL CHECK JUST LIKELY TO BE TRUE
+        // var eventNameRexExp = new RegExp($stateParams.event, 'i')
+        // self.show = body.results.filter(function (event) {
+        //   console.log(eventNameRexExp.test(event))
+        //   return eventNameRexExp.test(event.eventname)
+        // })
       }
     )
+  }
+  self.getFavourite = function(){
+
   }
 }

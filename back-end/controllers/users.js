@@ -36,7 +36,7 @@ function updateUsers(req, res){
   console.log(req.body.term)
   User.findOneAndUpdate(
     {uid: req.body.term.uid},
-    {favourites: req.body.term.event}
+    {$addToSet : {favourites: req.body.term.event}}
     ,function(err, user){
       res.status(204)
     }
