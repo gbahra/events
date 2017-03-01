@@ -5,12 +5,21 @@ angular
 function eventController(Events, $stateParams, $state){
   var self = this;
 
-  self.getEvent = function(){
+  self.getEvents = function(){
     Events.get().then(function(response){
       var body = JSON.parse(response.data.body)
       self.all = body.results
       console.log(self.all)
     })
+
   }
-  return self
+  self.getEvent = function(){
+    Events.show($stateParams.event).then(function(response){
+        var body = JSON.parse(response.data.body)
+      self.event = body.results[0]
+      console.log(self.event)
+      }
+    )
+  }
+
 }

@@ -55,7 +55,7 @@ function MainRouter($stateProvider, $urlRouterProvider){
       templateUrl: '/states/login.html'
     })
     .state('show',{
-      url: '/show',
+      url: '/show/:event',
       templateUrl: '/states/show.html'
     })
     $urlRouterProvider.otherwise('/')

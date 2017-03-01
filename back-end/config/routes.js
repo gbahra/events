@@ -17,4 +17,8 @@ router.route('/api/users/:id')
 router.route('/api/events')
   .get(eventsController.index);
 
+router.route('/api/events/:event')
+  .get(eventsController.show);
+
+
 module.exports = router;

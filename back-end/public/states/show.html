@@ -1,1 +1,12 @@
 <h1>show</h1>
+<section ng-init = 'event.getEvent()'>
+  <img src='{{event.largeimageurl}}'>
+  <p>{{e.eventname}}</p>
+  <p>{{event.venue.town}}</p>
+  <div ng-repeat = 'artist in e.artists'>
+    <p><span>{{artist.name}}</span></p>
+  </div>
+  <p>{{event.date}}</p>
+  <p>{{event.openingtimes.doorsopen}}</p>
+  <button ng-click = 'favourite()'>favourite</button>
+</section>
