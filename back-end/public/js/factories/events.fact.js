@@ -12,6 +12,9 @@ function eventsFactory(API, $http){
     },
     update: function(uid){
       return $http.patch(API+'/users/' + uid)
+    },
+    delete: function(uid){
+      return $http.delete(API+'/users/' + uid)
     }
   }
 }

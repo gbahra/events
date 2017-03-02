@@ -29,4 +29,15 @@ function userController(Auth, User, $stateParams, $state){
         $state.reload()
       })
   }
+  self.delete = function(){
+    var uid = Auth.$getAuth().uid;
+    var user = firebase.auth().currentUser;
+    user.delete().then(function(response){
+      console.log('firebase delete')
+      User.delete(uid).then(function(response){
+      console.log(' db delete')
+    })
+    })
+
+  }
 }
