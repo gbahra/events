@@ -32,7 +32,7 @@ function MainRouter($stateProvider, $urlRouterProvider){
       templateUrl: 'states/home.html',
     })
     .state('searchResult',{
-      url: '/event/:id',
+      url: '/event',
       templateUrl: 'states/searchResult.html',
       resolve: authRequired
     })

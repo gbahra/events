@@ -2,8 +2,8 @@
 <form ng-submit = 'event.search()'>
   <input type="text" name="search" placeholder="Search a event" ng-model = 'event.searchTerm'>
   <input type="submit" value="search">
-</form>
-<div ng-repeat = 'items in event.searchItems'>
+
+<div ng-repeat = 'items in event.searchItems.results'>
   <img src='{{items.largeimageurl}}'>
   <p><a ui-sref="show({event: items.eventname})">{{items.eventname}}</a></p>
   <p>{{items.venue.town}}</p>
@@ -15,3 +15,4 @@
   <p>{{items.date}}</p>
   <p>{{e.openingtimes.doorsopen}}</p>
 </div>
+</form>
