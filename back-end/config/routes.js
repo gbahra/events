@@ -9,7 +9,7 @@ router.route('/api/users')
   .post(usersController.create);
 
 router.route('/api/users/favourite/:id')
-  .get(usersController.getFavourite);
+  .get(usersController.getFavourite)
 
 router.route('/api/users/:id')
   .put(usersController.favourite)

@@ -7,6 +7,9 @@ function userFactory(API, $http){
     create: function(user){
       return $http.post(API+'/users', user)
     },
+    getUser: function(uid){
+      return $http.get(API+'/users/' + uid)
+    },
     favourite: function(eventObj){
       return $http.put(API+'/users/' + eventObj.uid, eventObj)
     },
@@ -14,7 +17,7 @@ function userFactory(API, $http){
       return $http.get(API+'/users/favourite' + uid)
     },
     update: function(user){
-      return $http.patch(API+'/users/' + user.uid, userObj)
-    },
+      return $http.patch(API+'/users/' + user.uid, user)
+    }
   }
 }

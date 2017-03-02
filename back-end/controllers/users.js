@@ -67,9 +67,17 @@ function favouriteUsers(req, res){
 }
 
 function updateUsers(req,res){
-
-
+    User.findOneAndUpdate(
+    {uid: req.params.id},
+    req.body
+    ,function(err, user){
+      console.log(user)
+      res.status(204);
+    }
+  )
 }
+
+
 
 function deleteUsers(req, res){
   User.findByIdAndRemove(req.params.id , function(err) {
@@ -82,7 +90,7 @@ function deleteUsers(req, res){
 module.exports = {
   index : indexUsers,
   show : showUsers,
-  getfavourite : getfavouriteUsers,
+  getFavourite : getfavouriteUsers,
   favourite :favouriteUsers,
   create : createUsers,
   update : updateUsers,
