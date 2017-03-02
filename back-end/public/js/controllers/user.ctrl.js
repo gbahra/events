@@ -26,7 +26,8 @@ function userController(Auth, User, $stateParams, $state){
   self.updateUser = function () {
     User.update(self.user)
       .then(function (response) {
-        $state.go('home')
+        console.log('yhhh')
+        $state.reload()
       })
   }
 }
