@@ -9,14 +9,13 @@ router.route('/api/users')
   .post(usersController.create);
 
 router.route('/api/users/favourite/:id')
-  .get(usersController.favourite);
+  .get(usersController.getFavourite);
 
 router.route('/api/users/:id')
+  .put(usersController.favourite)
   .patch(usersController.update)
   .get(usersController.show)
   .delete(usersController.delete);
-
-
 
 //events
 router.route('/api/events')

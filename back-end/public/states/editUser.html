@@ -1,26 +1,24 @@
 <h1>edit profile</h1>
 <section ng-controller = 'userController as user'>
-  <section ng-init="criminal.getUser()">
+  <section ng-init="user.getUser()">
     <form ng-submit = 'user.updateUser()'>
+    <!-- FOR THE MOMENT WE ARE NOT EDITING EMAILS BECUASE -->
+    <!--   <div>
+        Email: <input type="text" ng-model="user.user.email">
+      </div> -->
+
       <div>
-        Email: <input type="text" ng-model="user">
-      </div>
-      <div>
-        Password: <input type="text" ng-model="user">
+        first name: <input type="text" ng-model="user.user.first_name">
       </div>
 
       <div>
-        first name: <input type="text" ng-model="user">
-      </div>
-
-      <div>
-        last name: <input type="text" ng-model="user">
+        last name: <input type="text" ng-model="user.user.last_name">
       </div>
       <div>
-        mobile number: <input type="Number" ng-model="user">
+        mobile number: <input type="Number" ng-model="user.user.mobile_number">
       </div>
         <div>
-        postcode: <input type="text" ng-model="user">
+        postcode: <input type="text" ng-model="user.user.post_code">
       </div>
       <input type="submit" vaule="Update">
 

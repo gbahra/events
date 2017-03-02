@@ -15,13 +15,14 @@ function showUsers(req, res) {
   User.find({uid: req.params.id}, function(err, user) {
     if(!user) return res.status(404).send("Not found");
     if(err) return res.status(500).send(err);
+    console.log(user)
     res.json({
      user : user
     });
   });
 }
 
-function favouriteUsers(req, res){
+function getfavouriteUsers(req, res){
   var resObj = [];
   User.findOne({uid:req.params.id} , function(err, user) {
     if(!user) return res.status(404).send("Not found");
@@ -54,7 +55,7 @@ function createUsers(req, res){
   });
 }
 
-function updateUsers(req, res){
+function favouriteUsers(req, res){
   console.log(req.body.term)
   User.findOneAndUpdate(
     {uid: req.body.term.uid},
@@ -65,6 +66,10 @@ function updateUsers(req, res){
   )
 }
 
+function updateUsers(req,res){
+
+
+}
 
 function deleteUsers(req, res){
   User.findByIdAndRemove(req.params.id , function(err) {
@@ -77,7 +82,8 @@ function deleteUsers(req, res){
 module.exports = {
   index : indexUsers,
   show : showUsers,
-  favourite : favouriteUsers,
+  getfavourite : getfavouriteUsers,
+  favourite :favouriteUsers,
   create : createUsers,
   update : updateUsers,
   delete : deleteUsers

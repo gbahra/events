@@ -4,6 +4,7 @@ angular
 
 function userController(Auth, User, $stateParams, $state){
   var self = this;
+  self.user = {};
   self.favourite = function(eventObj){
     console.log(eventObj)
     eventObj.uid = Auth.$getAuth().uid
@@ -18,17 +19,13 @@ function userController(Auth, User, $stateParams, $state){
     var uid = Auth.$getAuth().uid;
     User.getUser(uid)
       .then(function (response) {
-        console.log(response)
-        // self.user = response.data.criminal
+        self.user = response.data.user[0];
+        console.log(self.user)
       })
   }
   self.updateUser = function () {
-    // var id = $stateParams.id
-    // Criminal.update(id, self.user)
-    //   .then(function (response) {
-    //     self.user = {}
-    //   })
+    User.update(self.user)
+      .then(function (response) {
+      })
   }
-
-
 }
