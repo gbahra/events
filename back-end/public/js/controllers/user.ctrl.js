@@ -36,7 +36,7 @@ function userController(Auth, User, $stateParams, $state){
       console.log('firebase delete')
       User.delete(uid).then(function(response){
       console.log(' db delete')
-    })
+      })
     })
 
   }

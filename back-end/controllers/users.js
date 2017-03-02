@@ -81,7 +81,7 @@ function updateUsers(req,res){
 
 
 function deleteUsers(req, res){
-  User.findByIdAndRemove(req.params.id , function(err) {
+  User.findOneAndRemove(req.params.id , function(err) {
     res.status(200).redirect('/')
     console.log("delete")
   });
