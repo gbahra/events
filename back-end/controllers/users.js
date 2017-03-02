@@ -78,8 +78,6 @@ function updateUsers(req,res){
     )
 }
 
-
-
 function deleteUsers(req, res){
   console.log(req.params.id)
   User.findOneAndRemove({uid: req.params.id}, function(err) {
