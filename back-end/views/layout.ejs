@@ -30,7 +30,7 @@
         <li> <a href = '#' ng-click = 'auth.signOut()'>signout</a></li>
       </ul>
       <form ng-submit = 'event.search()'>
-        <input type="text" name="search" placeholder="Search a event">
+        <input type="text" name="search" placeholder="Search a event" ng-model = 'event.searchTerm'>
         <input type="submit" value="search">
       </form>
     </div>

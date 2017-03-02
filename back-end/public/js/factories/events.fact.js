@@ -11,7 +11,7 @@ function eventsFactory(API, $http){
      return $http.get(API+'/events/' + event)
     },
     update: function(uid){
-      return $http.patchs(API+'/users/' + uid)
+      return $http.patch(API+'/users/' + uid)
     }
   }
 }
