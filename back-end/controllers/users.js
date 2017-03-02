@@ -67,6 +67,7 @@ function favouriteUsers(req, res){
 }
 
 function updateUsers(req,res){
+    console.log(req.body)
     User.findOneAndUpdate(
     {uid: req.params.id},
     req.body
@@ -74,7 +75,7 @@ function updateUsers(req,res){
       console.log(user)
       res.status(204);
     }
-  )
+    )
 }
 
 
