@@ -14,7 +14,6 @@ function userController(Auth, User, $stateParams, $state){
     })
   }
 
-
   self.getUser = function () {
     var uid = Auth.$getAuth().uid;
     User.getUser(uid)
@@ -25,7 +24,7 @@ function userController(Auth, User, $stateParams, $state){
   }
   self.updateUser = function () {
     User.update(self.user)
-      .then(function (response) {
+      .then(function(response){
         console.log('yhhh')
         $state.reload()
       })

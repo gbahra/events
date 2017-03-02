@@ -41,7 +41,7 @@ function eventController(Auth, User, Events, $stateParams, $state){
     console.log(self.searchTerm)
     Events.show(self.searchTerm).then(function(response){
         var body = JSON.parse(response.data.body)
-        console.log(body)//NOT A REAL CHECK JUST LIKELY TO BE TRUE
+        self.searchItems = body//NOT A REAL CHECK JUST LIKELY TO BE TRUE
         // var eventNameRexExp = new RegExp($stateParams.event, 'i')
         // self.show = body.results.filter(function (event) {
         //   console.log(eventNameRexExp.test(event))
@@ -50,5 +50,5 @@ function eventController(Auth, User, Events, $stateParams, $state){
       }
     )
   }
-  }
+}
 

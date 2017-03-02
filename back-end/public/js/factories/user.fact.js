@@ -17,7 +17,7 @@ function userFactory(API, $http){
       return $http.get(API+'/users/favourite' + uid)
     },
     update: function(user){
-      return $http.patch(API+'/users/' + user.uid, user)
+      return $http.patch(API + '/users/' + user.uid, user)
     }
   }
 }
