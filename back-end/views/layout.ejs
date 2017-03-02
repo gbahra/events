@@ -29,6 +29,10 @@
         <li><a href = '#' ui-sref="favourites">favourites</a></li>
         <li> <a href = '#' ng-click = 'auth.signOut()'>signout</a></li>
       </ul>
+      <form ng-submit = 'event.search()'>
+        <input type="text" name="search" placeholder="Search a event">
+        <input type="submit" value="search">
+      </form>
     </div>
     <div ng-if = '!auth.user'>
       <p> welcome new</p>

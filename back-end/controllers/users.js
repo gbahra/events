@@ -21,13 +21,14 @@ function showUsers(req, res){
         function (error, response, body) {
           if (error) {console.log(error)}
           response.body = JSON.parse(JSON.stringify(response.body))
-          console.log(response.body)
+          //console.log(response.body)
           resObj[i] = response.body;
-          console.log(resObj[i])
+          //console.log(resObj[i])
         }
       )
     }
-    res.status(200).json({favourites: resObj});
+    console.log(resObj)
+    res.status(200).json(resObj);
   });
 
 }
