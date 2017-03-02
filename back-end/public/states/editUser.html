@@ -1,27 +1,29 @@
 <h1>edit profile</h1>
-<section ng-controller = 'userController as user'></section>
-<form ng-submit = 'user.updateUser()'>
-  <div>
-    Email: <input type="text" ng-model="auth.email">
-  </div>
+<section ng-controller = 'userController as user'>
+  <section ng-init="criminal.getUser()">
+    <form ng-submit = 'user.updateUser()'>
+      <div>
+        Email: <input type="text" ng-model="user">
+      </div>
+      <div>
+        Password: <input type="text" ng-model="user">
+      </div>
 
-  <div>
-    Password: <input type="text" ng-model="auth.password">
-  </div>
+      <div>
+        first name: <input type="text" ng-model="user">
+      </div>
 
-  <div>
-    first name: <input type="text" ng-model="auth.first_name">
-  </div>
+      <div>
+        last name: <input type="text" ng-model="user">
+      </div>
+      <div>
+        mobile number: <input type="Number" ng-model="user">
+      </div>
+        <div>
+        postcode: <input type="text" ng-model="user">
+      </div>
+      <input type="submit" vaule="Update">
 
-  <div>
-    last name: <input type="text" ng-model="auth.last_name">
-  </div>
-  <div>
-    mobile number: <input type="Number" ng-model="auth.mobile_number">
-  </div>
-    <div>
-    postcode: <input type="text" ng-model="auth.post_code">
-  </div>
-  <input type="submit" vaule="Update">
-
-  </form>
+    </form>
+  </section>
+</section>

@@ -11,7 +11,8 @@ function indexUsers(req, res){
   });
 }
 
-function showUsers(req, res){
+
+function favouriteUsers(req, res){
   var resObj = [];
   User.findOne({uid:req.params.id} , function(err, user) {
     if(!user) return res.status(404).send("Not found");
@@ -67,6 +68,7 @@ function deleteUsers(req, res){
 module.exports = {
   index : indexUsers,
   show : showUsers,
+  favourite : favouriteUsers,
   create : createUsers,
   update : updateUsers,
   delete : deleteUsers

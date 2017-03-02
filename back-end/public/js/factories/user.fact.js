@@ -11,6 +11,9 @@ function userFactory(API, $http){
       return $http.patch(API+'/users/' + eventObj.uid, eventObj)
     },
     getFavourite: function(uid){
+      return $http.get(API+'/users/favourite' + uid)
+    }
+    getUser : function(uid){
       return $http.get(API+'/users/' + uid)
     }
   }
