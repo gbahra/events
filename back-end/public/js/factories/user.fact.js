@@ -18,6 +18,12 @@ function userFactory(API, $http){
     },
     update: function(user){
       return $http.patch(API + '/users/' + user.uid, user)
+    },
+    delete: function(uid){
+      return $http.delete(API+'/users/' + uid)
+    },
+    update: function(uid){
+      return $http.patch(API+'/users/' + uid)
     }
   }
 }

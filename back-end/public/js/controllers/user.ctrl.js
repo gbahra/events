@@ -34,10 +34,11 @@ function userController(Auth, User, $stateParams, $state){
     var user = firebase.auth().currentUser;
     user.delete().then(function(response){
       console.log('firebase delete')
-      User.delete(uid).then(function(response){
-      console.log(' db delete')
-      })
     })
+    User.delete(uid).then(function(response){
+      console.log(' db delete')
+      $state.go('home')
+      })
 
   }
 }
