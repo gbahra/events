@@ -11,6 +11,15 @@ function indexUsers(req, res){
   });
 }
 
+function showUsers(req, res) {
+  User.find({uid: req.params.id}, function(err, user) {
+    if(!user) return res.status(404).send("Not found");
+    if(err) return res.status(500).send(err);
+    res.json({
+     user : user
+    });
+  });
+}
 
 function favouriteUsers(req, res){
   var resObj = [];
