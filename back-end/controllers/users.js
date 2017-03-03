@@ -46,7 +46,7 @@ function getFavouriteUsers(req, res){
 }
 function  newAPIpromise (favourite) {
   return new Promise (function (resolve, reject) {
-    rP('http://www.skiddle.com/api/v1/events/search/?api_key=' + process.env.TOKENVARNAME + '&keyword='+ favourite)
+    rP('http://www.skiddle.com/api/v1/events/search/?api_key=' + process.env.TOKENVARNAME + '&keyword='+ favourite + '&limit=100')
         .then(resolve)
         .catch(reject)
   })

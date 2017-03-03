@@ -41,11 +41,12 @@ function eventController(Auth, User, Events, $stateParams, $state){
       User.getUser(uid).then(function(res){
         for (var i = 0; i < response.data.results.length; i++ ){
           var array = JSON.parse(response.data.results[i])
+          console.log(array)
           for(var j = 0; j<array.results.length; j++){
             for(var k = 0; k<res.data.user[0].favourites.length; k++){
-              if(array.results[j].eventname === res.data.user[0].favourites[k]){
-                console.log('yhhhhh')
+              if(array.results[k].eventname === res.data.user[0].favourites[j]){
                 results.push(array.results[j])
+                break;
               }
             }
           }
