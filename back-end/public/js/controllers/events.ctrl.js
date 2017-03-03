@@ -39,22 +39,29 @@ function eventController(Auth, User, Events, $stateParams, $state){
     var results = []
     User.getFavourite(uid).then(function(response){
       User.getUser(uid).then(function(res){
-        for (var i = 0; i < response.data.results.length; i++ ){
+        for (var i = 0; i < response.data.results.length; i++){
           var array = JSON.parse(response.data.results[i])
           console.log(array)
-          for(var j = 0; j<array.results.length; j++){
-            for(var k = 0; k<res.data.user[0].favourites.length; k++){
-              if(array.results[k].eventname === res.data.user[0].favourites[j]){
-                results.push(array.results[j])
-                break;
+          for(var j = 0; j<res.data.user[0].favourites.length; j++){
+            for(var k = 0; k<array.results.length; k++){
+              if(res.data.user[0].favourites[j] === array.results[k].eventname){
+                results.push(array.results[k])
               }
             }
           }
         }
-        self.fav = results
+        console.log(results)
+        var tmp = [];
+        for(var i = 0; i < results.length; i++){
+          if(tmp.indexOf(results[i]) === -1){
+            tmp.push(results[i]);
+          }
+        }
+        self.fav = tmp
+        console.log(tmp)
+        })
       })
-    })
-  }
+     }
 
   self.search = function(){
     console.log(self.searchTerm)
