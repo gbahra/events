@@ -10,17 +10,17 @@ function indexEvents(req, res){
         secondReq(parseBody, i);
       }
   })
-  console.log(finalObj)
 }
 
-function secondReq(parseBody, i){
-  request('http://www.skiddle.com/api/v1/events/search/?api_key=' + process.env.TOKENVARNAME + '&EventCode='+parseBody.results[i].EventCode + "&limit=100", function(err, res, bod){
-    //PROBLEM IS ITERATING THROUGH THIS BITCH BECAUSE IT ITERATES THEN DOES THE RESQUESTS
-
+function secondReq(parseBody, i, increment){
+  request('http://www.skiddle.com/api/v1/events/search/?api_key=' + process.env.TOKENVARNAME + "&city=" + parseBody.results[i].venue.town + "&limit=100", function(err, res, bod){
       var bodyOfCheck = JSON.parse(res.body)
       for(var j = 0; j < bodyOfCheck.results.length; j++){
         //console.log(parseBody.results[i].id, bodyOfCheck.results[j].id)
+        // '&EventCode='+parseBody.results[i].EventCode +"&venue.id=" + parseBody.results[i].venueid +
+
         if(parseBody.results[i].id === bodyOfCheck.results[j].id){
+          console.log('yhhhhhhhhhhhh')
           var artists = [];
           increment++;
           for(var k = 0; k< body.results[j].artists; k++){
