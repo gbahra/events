@@ -2,10 +2,8 @@
 <html ng-app='events'>
 <head>
   <title>events</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
-
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+  <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script> -->
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
@@ -21,19 +19,14 @@
   <script type="text/javascript" src = 'js/controllers/events.ctrl.js'></script>
 </head>
 <body ng-controller = "eventController as event">
-    <nav>
+  <nav>
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Logo</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">JavaScript</a></li>
-      </ul>
+      <img src="https://images.unsplash.com/photo-1483101974978-cf266fdf1139?dpr=1">
     </div>
   </nav>
-  <h1>hi</h1>
+  <h1>eventListener</h1>
   <!-- THIS NAV CAN BE A PARTIAL -->
-    <section class = 'userWigdet headerElement' ng-controller = 'authenticationController as auth'>
+  <section class = 'userWigdet' ng-controller = 'authenticationController as auth'>
     <div ng-if = 'auth.user'>
       welcome {{auth.user.email}}, remember to keep our secrets
       <br>
@@ -46,7 +39,7 @@
       </ul>
     </div>
     <div ng-if = '!auth.user'>
-      <p> welcome new</p>
+      <p>welcome new</p>
       <br>
       <a href = '#' ui-sref='login'>login</a>
       <a href = '#' ui-sref='signUp'>sign up</a>

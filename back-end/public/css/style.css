@@ -1,3 +1,15 @@
-body{
-  background-color: aquamarine;
+img{
+  background-image: cover;
+  height:100vh;
+  width:100vw;
+  z-index:-1;
+}
+.nav-wrapper{
+  height: 45vh !important;
+}
+h1{
+  color:blue;
+}
+.userWigdet{
+  height:120%;
 }
