@@ -19,24 +19,42 @@ function eventController(Auth, User, Events, $stateParams, $state){
     console.log($stateParams.event)
     Events.show($stateParams.event).then(function(response){
         var body = JSON.parse(response.data.body)
-        self.show = body.results[0];//NOT A REAL CHECK JUST LIKELY TO BE TRUE
-        // var eventNameRexExp = new RegExp($stateParams.event, 'i')
-        // self.show = body.results.filter(function (event) {
-        //   console.log(eventNameRexExp.test(event))
-        //   return eventNameRexExp.test(event.eventname)
-        // })
+        console.log(body.results)
+        for(var i = 0; i<body.results.length; i++){
+          if($stateParams.event === body.results[i].eventname){
+            console.log('yhhhhh')
+            self.show = body.results[i];
+            return;
+          }
+          else{
+            console.log('nahhh')
+          }
+        }
       }
     )
   }
   self.getFavourites = function(){
-    self.fav = {}
+    self.fav = []
     var uid = Auth.$getAuth().uid
+    var results = []
     User.getFavourite(uid).then(function(response){
-      console.log(response)
+      User.getUser(uid).then(function(res){
+        for (var i = 0; i < response.data.results.length; i++ ){
+          var array = JSON.parse(response.data.results[i])
+          for(var j = 0; j<array.results.length; j++){
+            for(var k = 0; k<res.data.user[0].favourites.length; k++){
+              if(array.results[j].eventname === res.data.user[0].favourites[k]){
+                console.log('yhhhhh')
+                results.push(array.results[j])
+              }
+            }
+          }
+        }
+        self.fav = results
+      })
     })
-
-
   }
+
   self.search = function(){
     console.log(self.searchTerm)
     Events.show(self.searchTerm).then(function(response){

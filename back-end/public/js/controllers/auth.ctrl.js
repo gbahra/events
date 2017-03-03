@@ -15,7 +15,6 @@ angular
           post_code: self.post_code
         }).then(function(response){
           resetCredentials();
-
           self.newUser = {};
           $state.go('home')
         })

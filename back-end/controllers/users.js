@@ -1,6 +1,7 @@
 var User= require("../models/User");
 var bodyParser = require('body-parser');
 var request = require('request');
+var rP = require('request-promise');
 
 function indexUsers(req, res){
   User.find({} , function(err, users) {
@@ -22,26 +23,33 @@ function showUsers(req, res) {
   });
 }
 
-function getfavouriteUsers(req, res){
+function getFavouriteUsers(req, res){
   var resObj = [];
   User.findOne({uid:req.params.id} , function(err, user) {
     if(!user) return res.status(404).send("Not found");
     if(err) return res.status(500).send(err);
-    for(var i = 0; i<user.favourites.length; i++){
-      request('http://www.skiddle.com/api/v1/events/search/?api_key=' + process.env.TOKENVARNAME + '&keyword='+ user.favourites[i],
-        function (error, response, body) {
-          if (error) {console.log(error)}
-          response.body = JSON.parse(JSON.stringify(response.body))
-          //console.log(response.body)
-          resObj[i] = response.body;
-          //console.log(resObj[i])
-        }
-      )
+
+    var promiseArr = []
+    for(var i = 0; i < user.favourites.length; i++){
+      promiseArr.push(newAPIpromise(user.favourites[i]));
     }
-    console.log(resObj)
-    res.status(200).json(resObj);
+    console.log(promiseArr)
+    Promise.all(promiseArr).then(function (responseArr) {
+      console.log(responseArr.length)
+        return res.status(200).json({ 'results': responseArr });
+    }).catch(function (err) {
+      console.log(err)
+      return res.status(500).json({ 'err': err });
+    })
   });
 
+}
+function  newAPIpromise (favourite) {
+  return new Promise (function (resolve, reject) {
+    rP('http://www.skiddle.com/api/v1/events/search/?api_key=' + process.env.TOKENVARNAME + '&keyword='+ favourite)
+        .then(resolve)
+        .catch(reject)
+  })
 }
 
 function createUsers(req, res){
@@ -89,7 +97,7 @@ function deleteUsers(req, res){
 module.exports = {
   index : indexUsers,
   show : showUsers,
-  getFavourite : getfavouriteUsers,
+  getFavourite : getFavouriteUsers,
   favourite :favouriteUsers,
   create : createUsers,
   update : updateUsers,

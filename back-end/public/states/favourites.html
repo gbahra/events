@@ -1,13 +1,15 @@
 <h1>favourites</h1>
 <section ng-init = 'event.getFavourites()'>
-  <img src='{{event.show.largeimageurl}}'>
-  <p>{{event.show.eventname}}</p>
-  <p>{{event.show.venue.town}}</p>
-  <p>
-    <div ng-repeat = 'artist in event.artists'>
-      <span>{{artist.name}}</span>
-    </div>
-  </p>
-  <p>{{event.show.date}}</p>
-  <p>{{event.show.openingtimes.doorsopen}}</p>
+  <div ng-repeat = "e in event.fav">
+    <img src='{{e.largeimageurl}}'>
+    <p>{{e.eventname}}</p>
+    <p>{{e.venue.town}}</p>
+    <p>
+      <div ng-repeat = 'artist in event.artists'>
+        <span>{{artist.name}}</span>
+      </div>
+    </p>
+    <p>{{e.date}}</p>
+    <p>{{e.openingtimes.doorsopen}}</p>
+  </div>
 </section>

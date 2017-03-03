@@ -1,15 +1,9 @@
 img{
-  background-image: cover;
-  height:100vh;
+  margin-top: -50px;
+  margin-left: -8px;
+  height:80vh;
   width:100vw;
   z-index:-1;
 }
-.nav-wrapper{
-  height: 45vh !important;
-}
-h1{
-  color:blue;
-}
-.userWigdet{
-  height:120%;
-}
+
+
