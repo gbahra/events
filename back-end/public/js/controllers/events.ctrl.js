@@ -10,6 +10,7 @@ function eventController(Auth, User, Events, $stateParams, $state){
     Events.get().then(function(response){
       var body = JSON.parse(response.data.body)
       self.all = body.results
+      console.log(self.all)
 
     })
 
