@@ -24,6 +24,7 @@ function eventController(Auth, User, Events, $stateParams, $state){
           if($stateParams.event === body.results[i].eventname){
             console.log('yhhhhh')
             self.show = body.results[i];
+            console.log(self.show)
             return;
           }
           else{
@@ -50,18 +51,19 @@ function eventController(Auth, User, Events, $stateParams, $state){
             }
           }
         }
-        console.log(results)
-        var tmp = [];
-        for(var i = 0; i < results.length; i++){
-          if(tmp.indexOf(results[i]) === -1){
-            tmp.push(results[i]);
+        var newArr = []
+        var currentEventIDs = ''
+        for (var i = 0; i < results.length; i++ ) {
+          var currentIDregExp = new RegExp(results[i].id, 'i')
+          if (!currentIDregExp.test(currentEventIDs)) {
+            newArr.push(results[i])
+            currentEventIDs += results[i].id + '|'
           }
         }
-        self.fav = tmp
-        console.log(tmp)
-        })
+        self.fav = newArr
       })
-     }
+    })
+  }
 
   self.search = function(){
     console.log(self.searchTerm)
