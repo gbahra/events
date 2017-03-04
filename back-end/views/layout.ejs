@@ -44,12 +44,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">eventListener</a>
+              <a class="navbar-brand" <a href = '#' ui-sref="home">eventListener</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-collapse-3">
               <ul class="nav navbar-nav navbar-right">
-                <li><a href = '#' ui-sref="home">home</a></li>
                 <li><a href = '#' ui-sref="edit({uid: auth.uid})">edit profile</a></li>
                 <li><a href = '#' ui-sref="favourites">favourites</a></li>
                 <li><a href = '#' ui-sref="searchResult">search</a></li>
@@ -71,11 +70,9 @@
         </nav><!-- /.navbar -->
       </header>
     </div>
-
-
     </div>
     <div ng-if = '!auth.user'>
-      <nav class="navbar navbar-inverse">
+      <nav class="navbar navbar-inverse" id = 'unAuth'>
         <div class="container">
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">

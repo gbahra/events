@@ -75,15 +75,15 @@ function favouriteUsers(req, res){
 }
 
 function updateUsers(req,res){
-    console.log(req.body)
-    User.findOneAndUpdate(
+  console.log(req.body)
+  User.findOneAndUpdate(
     {uid: req.params.id},
     req.body
     ,function(err, user){
       console.log(user)
-      res.status(204);
+
     }
-    )
+  )
 }
 
 function deleteUsers(req, res){

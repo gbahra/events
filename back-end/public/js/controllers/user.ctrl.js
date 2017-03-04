@@ -22,8 +22,8 @@ function userController(Auth, User, $stateParams, $state){
   self.updateUser = function () {
     User.update(self.user)
       .then(function(response){
-        console.log('yhhh')
-        $state.reload()
+        console.log('yhhhh')
+        $state.go('home')
       })
   }
   self.delete = function(){
