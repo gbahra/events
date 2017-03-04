@@ -3,8 +3,9 @@
 <head>
   <title>events</title>
   <!-- styling tags -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <!-- angular tags -->
   <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular.js"></script>
@@ -21,40 +22,88 @@
   <script type="text/javascript" src = 'js/controllers/events.ctrl.js'></script>
 </head>
 <body ng-controller = "eventController as event">
-  <div class="container">
-  <div class="jumbotron">
-    <h1>Bootstrap Tutorial</h1>
-    <p>Bootstrap is the most popular HTML, CSS, and JS framework for developing
-    responsive, mobile-first projects on the web.</p>
-  </div>
-  <p>This is some text.</p>
-  <p>This is another text.</p>
-</div>
 
 
-
-
-  <h1>eventListener</h1>
-  <!-- <img src="https://images.unsplash.com/photo-1483101974978-cf266fdf1139?dpr=1"> -->
 
   <!-- THIS NAV CAN BE A PARTIAL -->
-  <section class = 'userWigdet' ng-controller = 'authenticationController as auth'>
-    <div ng-if = 'auth.user'>
-      welcome {{auth.user.email}}, remember to keep our secrets
-      <br>
-      <ul>
-        <li><a href = '#' ui-sref="home">home</a></li>
-        <li><a href = '#' ui-sref="edit({uid: auth.uid})">edit profile</a></li>
-        <li><a href = '#' ui-sref="favourites">favourites</a></li>
-        <li><a href = '#' ui-sref="searchResult">search</a></li>
-        <li> <a href = '#' ng-click = 'auth.signOut()'>signout</a></li>
-      </ul>
+  <section ng-controller = 'authenticationController as auth'>
+
+      <!-- welcome {{auth.user.email}}, remember to keep our secrets -->
+
+  <header>
+  <div class="container-fluid">
+    <img src="https://images.unsplash.com/photo-1483101974978-cf266fdf1139?dpr=1">
+      <div ng-if = 'auth.user'>
+        <nav class="navbar navbar-inverse">
+          <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-3">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">eventListener</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse-3">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href = '#' ui-sref="home">home</a></li>
+                <li><a href = '#' ui-sref="edit({uid: auth.uid})">edit profile</a></li>
+                <li><a href = '#' ui-sref="favourites">favourites</a></li>
+                <li><a href = '#' ui-sref="searchResult">search</a></li>
+                <li> <a href = '#' ng-click = 'auth.signOut()'>signout</a></li>
+                <li>
+                  <a class="btn btn-default btn-outline btn-circle collapsed"  data-toggle="collapse" href="#nav-collapse3" aria-expanded="false" aria-controls="nav-collapse3">Search</a>
+                </li>
+              </ul>
+              <div class="collapse nav navbar-nav nav-collapse slide-down" id="nav-collapse3">
+                <form class="navbar-form navbar-right" role="search">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search" />
+                  </div>
+                  <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                </form>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container -->
+        </nav><!-- /.navbar -->
+      </header>
+    </div>
+
+
     </div>
     <div ng-if = '!auth.user'>
-      <p>welcome new</p>
-      <br>
-      <a href = '#' ui-sref='login'>login</a>
-      <a href = '#' ui-sref='signUp'>sign up</a>
+      <nav class="navbar navbar-inverse">
+        <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-3">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">eventListener</a>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="navbar-collapse-3">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href = '#' ui-sref='login'>login</a></li>
+              <li> <a href = '#' ui-sref='signUp'>sign up</a></li>
+            </ul>
+            <div class="collapse nav navbar-nav nav-collapse slide-down" id="nav-collapse3">
+              <form class="navbar-form navbar-right" role="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Search" />
+                </div>
+                <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+              </form>
+            </div>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container -->
+      </nav>
     </div>
     <section  ui-view></section>
   </section>

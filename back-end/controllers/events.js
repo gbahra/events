@@ -26,9 +26,9 @@ function secondReq(parseBody, i, increment, finalObj){
           var artists = [];
           increment++;
           console.log(bodyOfCheck.results[j])
-          for(var k = 0; k< bodyOfCheck.results[j].artists.length; k++){
-            artists.push(body.results[j].artists[k])
-          }
+          // for(var k = 0; k< bodyOfCheck.results[j].artists.length; k++){
+          //   artists.push(body.results[j].artists[k])
+          // }
           finalObj = {increment: artists};
           console.log(finalObj)
         }

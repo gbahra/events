@@ -1,27 +1,29 @@
 <h1>edit profile</h1>
 <section ng-controller = 'userController as user'>
   <section ng-init="user.getUser()">
-    <form ng-submit = 'user.updateUser()'>
     <!-- FOR THE MOMENT WE ARE NOT EDITING EMAILS BECUASE -->
     <!--   <div>
         Email: <input type="text" ng-model="user.user.email">
       </div> -->
-      <div>
-        first name: <input type="text" ng-model="user.user.first_name">
+    <form role="form" ng-submit = 'user.updateUser()'>
+      <div class="form-group float-label-control">
+        <label for="">First Name</label>
+        <input type="text" class="form-control" placeholder="First Name"  ng-model="user.user.first_name">
       </div>
-
-      <div>
-        last name: <input type="text" ng-model="user.user.last_name">
+      <div class="form-group float-label-control">
+        <label for="">Last Name</label>
+        <input type="text" class="form-control" placeholder="Last Name" ng-model="user.user.last_name">
       </div>
-      <div>
-        mobile number: <input type="Number" ng-model="user.user.mobile_number">
+      <div class="form-group float-label-control">
+        <label for="">Mobile Number</label>
+        <input type="Number" class="form-control" placeholder="Mobile Number" ng-model="user.user.mobile_number">
       </div>
-        <div>
-        postcode: <input type="text" ng-model="user.user.post_code">
+      <div class="form-group float-label-control">
+        <label for="">Postcode</label>
+        <input type="text" class="form-control" placeholder="Postcode" ng-model="user.user.post_code">
       </div>
       <input type="submit" vaule="Update">
       <button ng-click = 'user.delete()'>Delete</button>
-
     </form>
   </section>
 </section>
