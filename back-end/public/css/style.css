@@ -25,6 +25,10 @@ h1{
   margin-left: -1px;
 }
 
+#searchBar{
+  margin: 2px;
+}
+
 form>div{
   margin: 5px;
 }
