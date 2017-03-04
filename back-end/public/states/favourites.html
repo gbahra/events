@@ -1,15 +1,21 @@
 <h1>favourites</h1>
-<section ng-init = 'event.getFavourites()'>
-  <div ng-repeat = "e in event.fav">
-    <img src='{{e.largeimageurl}}'>
-    <p>{{e.eventname}}</p>
-    <p>{{e.venue.town}}</p>
-    <p>
-      <div ng-repeat = 'artist in event.artists'>
-        <span>{{artist.name}}</span>
+<section id = 'cards' ng-init = 'event.getFavourites()'>
+  <div class="row">
+    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+    <div ng-repeat = 'e in event.fav'>
+      <img class="card-img-top" src="{{e.largeimageurl}}" alt="Card image cap">
+      <div class="card-block">
+        <h4 class="card-title"><a ui-sref="show({event: e.eventname})">{{e.eventname}}</a></h4>
+        <p>{{e.venue.town}}</p>
+        <p>
+          <div ng-repeat = 'artist in e.artists'>
+            <span>{{artist.name}}</span>
+          </div>
+        </p>
+        <p>{{e.date}}</p>
+        <p>{{e.openingtimes.doorsopen}}</p>
       </div>
-    </p>
-    <p>{{e.date}}</p>
-    <p>{{e.openingtimes.doorsopen}}</p>
+    </div>
   </div>
+</div>
 </section>

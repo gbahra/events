@@ -60,9 +60,9 @@
               <div class="collapse nav navbar-nav nav-collapse slide-down" id="nav-collapse3">
                 <form class="navbar-form navbar-right" role="search">
                   <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search" />
+                    <input type="text" class="form-control" placeholder="Search" ng-model = 'event.searchTerm'>
                   </div>
-                  <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                  <button type="submit" class="btn btn-danger"><a href = '#' ui-sref="searchResult"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></button>
                 </form>
               </div>
             </div><!-- /.navbar-collapse -->

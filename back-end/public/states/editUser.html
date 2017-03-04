@@ -1,25 +1,25 @@
 <h1>edit profile</h1>
 <section ng-controller = 'userController as user'>
-  <section ng-init="user.getUser()">
+  <section id = 'formSection' ng-init="user.getUser()">
     <!-- FOR THE MOMENT WE ARE NOT EDITING EMAILS BECUASE -->
     <!--   <div>
         Email: <input type="text" ng-model="user.user.email">
       </div> -->
     <form role="form" ng-submit = 'user.updateUser()'>
       <div class="form-group float-label-control">
-        <label for="">First Name</label>
+        <label >First Name</label>
         <input type="text" class="form-control" placeholder="First Name"  ng-model="user.user.first_name">
       </div>
       <div class="form-group float-label-control">
-        <label for="">Last Name</label>
+        <label>Last Name</label>
         <input type="text" class="form-control" placeholder="Last Name" ng-model="user.user.last_name">
       </div>
       <div class="form-group float-label-control">
-        <label for="">Mobile Number</label>
+        <label>Mobile Number</label>
         <input type="Number" class="form-control" placeholder="Mobile Number" ng-model="user.user.mobile_number">
       </div>
       <div class="form-group float-label-control">
-        <label for="">Postcode</label>
+        <label>Postcode</label>
         <input type="text" class="form-control" placeholder="Postcode" ng-model="user.user.post_code">
       </div>
       <input class="btn btn-primary" type="submit" vaule="Update">

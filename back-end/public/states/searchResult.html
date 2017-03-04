@@ -1,9 +1,5 @@
 <h1>search</h1>
-<form ng-submit = 'event.search()'>
-  <input type="text" name="search" placeholder="Search a event" ng-model = 'event.searchTerm'>
-  <input type="submit" value="search">
-</form>
-<section id = 'cards'>
+<section id = 'cards' ng-init = 'event.search()'>
   <div class="row">
     <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
     <div ng-repeat = 'items in event.searchItems.results'>

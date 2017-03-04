@@ -9,6 +9,10 @@ img{
   width:200px;
 }
 
+h1{
+  text-align:center;
+}
+
 .navbar{
   margin-left: -19px;
 }
@@ -36,6 +40,7 @@ input{
 #cards{
   display: inline-block;
   float: left;
+  margin: 10px;
 }
 
 /*NAVBAR STYLINGS*/
