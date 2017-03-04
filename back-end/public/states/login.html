@@ -9,7 +9,7 @@
       <input type="password" class="form-control" placeholder="Password" ng-model="auth.password">
     </div>
   </form>
-  <button ng-click='auth.signIn()'>login</button>
+  <button class="btn btn-primary" ng-click='auth.signIn()'>login</button>
   <p ng-if="auth.error">
     Error: {{auth.error}}
   </p>
