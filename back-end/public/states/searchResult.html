@@ -2,17 +2,27 @@
 <form ng-submit = 'event.search()'>
   <input type="text" name="search" placeholder="Search a event" ng-model = 'event.searchTerm'>
   <input type="submit" value="search">
-
-<div ng-repeat = 'items in event.searchItems.results'>
-  <img src='{{items.largeimageurl}}'>
-  <p><a ui-sref="show({event: items.eventname})">{{items.eventname}}</a></p>
-  <p>{{items.venue.town}}</p>
-  <p>
-    <div ng-repeat = 'artist in items.artists'>
-      <span>{{artist.name}}</span>
-    </div>
-  </p>
-  <p>{{items.date}}</p>
-  <p>{{items.openingtimes.doorsopen}}</p>
-</div>
 </form>
+<section id = 'cards'>
+  <div class="row">
+    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+    <div ng-repeat = 'items in event.searchItems.results'>
+      <img class="card-img-top" src="{{items.largeimageurl}}" alt="Card image cap">
+      <div class="card-block">
+        <h4 class="card-title"><a ui-sref="show({event: items.eventname})">{{items.eventname}}</a></h4>
+        <p>{{items.venue.town}}</p>
+        <p>
+          <div ng-repeat = 'artist in items.artists'>
+            <span>{{artist.name}}</span>
+          </div>
+        </p>
+        <p>{{items.date}}</p>
+        <p>{{items.openingtimes.doorsopen}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+
