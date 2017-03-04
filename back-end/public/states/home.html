@@ -1,4 +1,5 @@
 <h1>home</h1>
+<h1>Trending Events</h1>
 <section ng-init = 'event.getEvents()'>
   <div ng-repeat = 'e in event.all'>
     <img src='{{e.largeimageurl}}'>
@@ -10,4 +11,14 @@
     <p>{{e.date}}</p>
     <p>{{e.openingtimes.doorsopen}}</p>
   </div>
+</section>
+<section>
+<div class="vividworknav">
+  <a ui-sref="events({location: 'London'})">
+    <img src="http://www.gettyimages.co.uk/gi-resources/images/Homepage/Category-Creative/UK/UK_Creative_462809583.jpg">
+    <div class="work-text-content">
+      <p>London</p>
+    </div>
+  </a>
+</div>
 </section>
