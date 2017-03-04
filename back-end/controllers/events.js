@@ -17,7 +17,7 @@ function indexEvents(req, res){
 
 function secondReq(parseBody, i, increment, finalObj){
   request('http://www.skiddle.com/api/v1/events/search/?api_key=' + process.env.TOKENVARNAME + "&city=" + parseBody.results[i].venue.town + '&EventCode='+parseBody.results[i].EventCode +"&venue.id=" + parseBody.results[i].venueid +
-    "&limit=100", function(err, res, bod){
+    "&limit=100", function(err, res, bod){//WRITE A QUERY THAT REUTRNS ARTISTS
       var bodyOfCheck = JSON.parse(res.body)
       for(var j = 0; j < bodyOfCheck.results.length; j++){
         //console.log(parseBody.results[i].id, bodyOfCheck.results[j].id)
