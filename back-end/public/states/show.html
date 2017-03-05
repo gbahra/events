@@ -1,20 +1,24 @@
-<section ng-init = 'event.getEvent()' id = 'show'>
-  <h1>{{event.show.eventname}}</h1>
-  <img src='{{event.show.largeimageurl}}'>
-  <div ng-repeat = 'artist in event.show.artists'>
-      <span>{{artist.name}}</span>
-  </div>
-  <p>{{event.show.venue.address}} {{event.show.venue.town}} {{event.show.venue.postcode}}</p>
-  <p>{{event.show.entryprice}}</p>
-  <p ng-if = "event.show.tickets">Tickets Availble</p>
-  <p ng-if = "!event.show.tickets">Tickets Sold Out</p>
-  <p>{{event.show.date}}</p>
-  <p>{{event.show.openingtimes.doorsopen}} - {{event.show.openingtimes.doorsclose}}</p>
-  <p>Last Entry:{{event.show.openingtimes.lastentry}}</p>
-  <p></p>
-  <p>{{event.show.description}}</p>
+<section ng-init = 'event.getEvent()'>
+  <section  id = 'show'>
+    <h1>{{event.show.eventname}}</h1>
+    <img src='{{event.show.largeimageurl}}'>
+    <div ng-repeat = 'artist in event.show.artists'>
+        <span>{{artist.name}}</span>
+    </div>
+    <p> <span class="glyphicon glyphicon-road"></span> {{event.show.venue.address}} {{event.show.venue.town}} {{event.show.venue.postcode}}</p>
 
-  <div ng-controller = 'userController as user'>
-    <button ng-click = 'user.favourite({event: event.show.eventname})'>favourite</button>
-  </div>
+
+    <p><span class="glyphicon glyphicon-calendar"></span> {{event.show.date}}</p>
+    <p> <span class="glyphicon glyphicon-time"></span>{{event.show.openingtimes.doorsopen}} - {{event.show.openingtimes.doorsclose}} Last Entry:{{event.show.openingtimes.lastentry}}</p>
+    <p ng-if = "event.show.tickets"><span class="glyphicon glyphicon-shopping-cart"></span> Tickets Availble</p>
+    <p ng-if = "!event.show.tickets"><span class="glyphicon glyphicon-shopping-cart"></span> Tickets Sold Out</p>
+
+    <div ng-controller = 'userController as user'>
+      <button ng-click = 'user.favourite({event: event.show.eventname})'>favourite</button>
+    </div>
+  </section>
+  <section class="greenSection">
+    <p>{{event.show.entryprice}}</p>
+    <p>{{event.show.description}}</p>
+  </section>
 </section>
