@@ -19,7 +19,6 @@ function eventController(Auth, User, Events, $stateParams, $state){
     Events.getLocationEvents($stateParams.location).then(function(response){
       var body = JSON.parse(response.data.body)
       for(var i = 0; i < body.results.length; i++){
-        console.log(body.results[i].venue.town, $stateParams.location)
         if(body.results[i].venue.town === $stateParams.location){
           correctCityArray.push(body.results[i])
         }
@@ -30,19 +29,12 @@ function eventController(Auth, User, Events, $stateParams, $state){
 
   self.getEvent = function(){
     self.show = {}
-    console.log($stateParams.event)
     Events.show($stateParams.event).then(function(response){
         var body = JSON.parse(response.data.body)
-        console.log(body.results)
         for(var i = 0; i<body.results.length; i++){
           if($stateParams.event === body.results[i].eventname){
-            console.log('yhhhhh')
             self.show = body.results[i];
-            console.log(self.show)
             return;
-          }
-          else{
-            console.log('nahhh')
           }
         }
       }
@@ -60,7 +52,7 @@ function eventController(Auth, User, Events, $stateParams, $state){
           console.log(array)
           for(var j = 0; j<res.data.user[0].favourites.length; j++){
             for(var k = 0; k<array.results.length; k++){
-              if(res.data.user[0].favourites[j] === array.results[k].eventname){
+              if(res.data.user[0].favourites[j] ===array.results[k].eventname){
                 results.push(array.results[k])
               }
             }

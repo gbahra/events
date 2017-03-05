@@ -22,13 +22,9 @@
   <script type="text/javascript" src = 'js/controllers/events.ctrl.js'></script>
 </head>
 <body ng-controller = "eventController as event">
-
-
-
-  <!-- THIS NAV CAN BE A PARTIAL -->
   <section ng-controller = 'authenticationController as auth'>
-      <!-- welcome {{auth.user.email}}, remember to keep our secrets -->
   <header>
+
   <div class="container-fluid">
     <!-- <img id = "headerImage" src="https://images.unsplash.com/photo-1483101974978-cf266fdf1139?dpr=1"> -->
       <div ng-if = 'auth.user'>

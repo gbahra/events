@@ -1,14 +1,19 @@
-<h1>show</h1>
-<section ng-init = 'event.getEvent()'>
+<section ng-init = 'event.getEvent()' id = 'show'>
+  <h1>{{event.show.eventname}}</h1>
   <img src='{{event.show.largeimageurl}}'>
-  <p>{{event.show.eventname}}</p>
-  <p>{{event.show.venue.town}}</p>
-    <div ng-repeat = 'artist in event.show.artists'>
+  <div ng-repeat = 'artist in event.show.artists'>
       <span>{{artist.name}}</span>
-    </div>
-  </p>
+  </div>
+  <p>{{event.show.venue.address}} {{event.show.venue.town}} {{event.show.venue.postcode}}</p>
+  <p>{{event.show.entryprice}}</p>
+  <p ng-if = "event.show.tickets">Tickets Availble</p>
+  <p ng-if = "!event.show.tickets">Tickets Sold Out</p>
   <p>{{event.show.date}}</p>
-  <p>{{event.show.openingtimes.doorsopen}}</p>
+  <p>{{event.show.openingtimes.doorsopen}} - {{event.show.openingtimes.doorsclose}}</p>
+  <p>Last Entry:{{event.show.openingtimes.lastentry}}</p>
+  <p></p>
+  <p>{{event.show.description}}</p>
+
   <div ng-controller = 'userController as user'>
     <button ng-click = 'user.favourite({event: event.show.eventname})'>favourite</button>
   </div>
