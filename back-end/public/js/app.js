@@ -23,16 +23,16 @@ function MainRouter($stateProvider, $urlRouterProvider){
       url: '/authRequired',
       templateUrl: 'states/authRequired.html'
     })
-    .state('new',{
-      url: '/user/new',
-      templateUrl: 'states/newUser.html'
+    .state('events',{
+      url: '/events/:location',
+      templateUrl: 'states/events.html'
     })
     .state('home',{
       url: '/home',
       templateUrl: 'states/home.html',
     })
     .state('searchResult',{
-      url: '/event',
+      url: '/searchResult',
       templateUrl: 'states/searchResult.html',
       resolve: authRequired
     })

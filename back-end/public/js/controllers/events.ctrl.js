@@ -11,10 +11,24 @@ function eventController(Auth, User, Events, $stateParams, $state){
       var body = JSON.parse(response.data.body)
       self.all = body.results
       console.log(self.all)
-
     })
-
   }
+
+  self.getLocationEvents = function(){
+    self.locationEvents = {};
+    var correctCityArray = [];
+    Events.getLocationEvents($stateParams.location).then(function(response){
+      var body = JSON.parse(response.data.body)
+      for(var i = 0; i < body.results.length; i++){
+        console.log(body.results[i].venue.town, $stateParams.location)
+        if(body.results[i].venue.town === $stateParams.location){
+          correctCityArray.push(body.results[i])
+        }
+      }
+      self.locationEvents = correctCityArray
+    })
+  }
+
   self.getEvent = function(){
     self.show = {}
     console.log($stateParams.event)
@@ -35,6 +49,7 @@ function eventController(Auth, User, Events, $stateParams, $state){
       }
     )
   }
+
   self.getFavourites = function(){
     self.fav = []
     var uid = Auth.$getAuth().uid

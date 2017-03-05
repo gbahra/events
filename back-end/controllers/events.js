@@ -25,12 +25,12 @@ function secondReq(parseBody, i, increment, finalObj){
           console.log('yhhhhhhhhhhhh')
           var artists = [];
           increment++;
-          console.log(bodyOfCheck.results[j])
+          // console.log(bodyOfCheck.results[j])
           // for(var k = 0; k< bodyOfCheck.results[j].artists.length; k++){
           //   artists.push(body.results[j].artists[k])
           // }
           finalObj = {increment: artists};
-          console.log(finalObj)
+          // console.log(finalObj)
         }
       }
   })
@@ -44,7 +44,17 @@ function showEvents(req, res){
   )
 }
 
+function getLocationEvents(req, res){
+  request('http://www.skiddle.com/api/v1/events/search/?api_key=' + process.env.TOKENVARNAME + '&city='+ req.params.location, function (error, response, body) {
+      if (error) return res.status(500).json(error)
+      console.log(response)
+      res.json(response)
+    }
+  )
+}
+
 module.exports = {
   index : indexEvents,
-  show : showEvents
+  show : showEvents,
+  getLocationEvents : getLocationEvents
 }

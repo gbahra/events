@@ -9,6 +9,9 @@ function eventsFactory(API, $http){
     },
     show: function(event){
      return $http.get(API+'/events/' + event)
+    },
+    getLocationEvents: function(location){
+      return $http.get(API+'/events/location/' + location)
     }
   }
 }

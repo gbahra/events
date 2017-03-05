@@ -24,5 +24,8 @@ router.route('/api/events')
 router.route('/api/events/:event')
   .get(eventsController.show);
 
+router.route('/api/events/location/:location')
+  .get(eventsController.getLocationEvents);
+
 
 module.exports = router;

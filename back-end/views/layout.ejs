@@ -27,9 +27,7 @@
 
   <!-- THIS NAV CAN BE A PARTIAL -->
   <section ng-controller = 'authenticationController as auth'>
-
       <!-- welcome {{auth.user.email}}, remember to keep our secrets -->
-
   <header>
   <div class="container-fluid">
     <!-- <img id = "headerImage" src="https://images.unsplash.com/photo-1483101974978-cf266fdf1139?dpr=1"> -->
@@ -51,7 +49,6 @@
               <ul class="nav navbar-nav navbar-right">
                 <li><a href = '#' ui-sref="edit({uid: auth.uid})">edit profile</a></li>
                 <li><a href = '#' ui-sref="favourites">favourites</a></li>
-                <li><a href = '#' ui-sref="searchResult">search</a></li>
                 <li> <a href = '#' ng-click = 'auth.signOut()'>signout</a></li>
                 <li>
                   <a class="btn btn-default btn-outline btn-circle collapsed"  data-toggle="collapse" href="#nav-collapse3" aria-expanded="false" aria-controls="nav-collapse3">Search</a>
