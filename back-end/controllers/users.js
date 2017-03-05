@@ -2,6 +2,20 @@ var User= require("../models/User");
 var bodyParser = require('body-parser');
 var request = require('request');
 var rP = require('request-promise');
+var sendmail = require('sendmail')({
+  logger: {
+    debug: console.log,
+    info: console.info,
+    warn: console.warn,
+    error: console.error
+  },
+  silent: false,
+  dkim: { // Default: False
+    privateKey: fs.readFileSync('./dkim-private.pem', 'utf8'),
+    keySelector: 'mydomainkey'
+  },
+  devPort: 1025 // Default: False
+})
 
 function indexUsers(req, res){
   User.find({} , function(err, users) {
@@ -53,12 +67,20 @@ function  newAPIpromise (favourite) {
 }
 
 function createUsers(req, res){
-  console.log(req.body)
   User.create(req.body, function(err, user){
     if (err) {
       console.log(err)
       return res.status(500).json(err)
     }
+    sendmail({
+      from: 'gurpal_bahra@hotmail.co.uk',
+      to: 'gurpal_bahra@hotmail.co.uk',
+      subject: 'test sendmail',
+      html: 'Mail of test sendmail ',
+    }, function(err, reply) {
+        console.log(err && err.stack);
+        console.dir(reply);
+      });
     res.status(201).json({ user: user });
   });
 }
