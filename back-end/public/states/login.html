@@ -1,6 +1,5 @@
 <h1>Login</h1>
 <section ng-if = "!auth.user">
-
   <form role="form">
     <div class="form-group float-label-control">
       <label for="">Email</label>
@@ -12,12 +11,7 @@
     </div>
   </form>
   <button class="btn btn-primary" ng-click='auth.signIn()'>login</button>
-  <p ng-if="auth.error">
-    Error: {{auth.error}}
-  </p>
 </section>
-<section ng-if='auth.user'>
-  <h3>ur logged in </h3>
-</section>
+
 
 
