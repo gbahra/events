@@ -27,8 +27,22 @@
   margin-bottom: 65px
 }
 
+.greenSection>h3{
+  margin: 8px;
+  font-size: 25px;
+}
+
+.greenSection>p{
+  margin: 8px;
+  font-size: 20px;
+}
+
+.greenSection>div{
+  margin: 8px;
+}
+
 h1{
-  margin-bottom: 5px;
+  margin-bottom: 8px;
 }
 
 h1{
@@ -363,7 +377,7 @@ input{
 }
 .social li a i {
   font-size: 16px;
-  margin: 0 0 0 5px;
+  margin-left: 2px;
   color: #EDEFF1 !important;
 }
 .footer-bottom {
@@ -378,4 +392,5 @@ input{
 .payments {
   font-size: 1.5em;
 }
+
 

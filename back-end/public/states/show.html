@@ -13,12 +13,15 @@
     <p ng-if = "event.show.tickets"><span class="glyphicon glyphicon-shopping-cart"></span> Tickets Availble</p>
     <p ng-if = "!event.show.tickets"><span class="glyphicon glyphicon-shopping-cart"></span> Tickets Sold Out</p>
 
-    <div ng-controller = 'userController as user'>
-      <button ng-click = 'user.favourite({event: event.show.eventname})'>favourite</button>
-    </div>
+
   </section>
   <section class="greenSection">
-    <p>{{event.show.entryprice}}</p>
+    <h3>Event Info</h3>
     <p>{{event.show.description}}</p>
+    <p>Ticket Prices - £{{event.show.entryprice}}</p>
+    <p>Venue Rating - {{event.show.venue.rating}} Stars</p>
+    <div ng-controller = 'userController as user'>
+      <button class="btn btn-success" ng-click = 'user.favourite({event: event.show.eventname})'>I'm going</button>
+    </div>
   </section>
 </section>
