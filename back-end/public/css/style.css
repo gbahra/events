@@ -4,17 +4,7 @@
   margin-left: 150px;
 }
 
-.location{
 
-}
-
-.vividworknav{
-  background-color: white;
-  height:200px;
-  width:200px;
-  margin-left: 100px;
-  margin-top: 20px;
-}
 
 h1{
   text-align:center;
@@ -53,10 +43,15 @@ input{
   float: left;
   margin: 10px;
 }
-/*BUTTON STYLINGS*/
+/*LOCATION IMAGES STYLINGS*/
+#hiddenTitles{
+  display: hidden;
+}
   .vividworknav {
-      width: 33.333%;
-      height: auto;
+      margin-left: 100px;
+      margin-top: 20px;
+      height: 200px;
+      width:300px;
       float: left;
       padding: 0;
       position: relative;
@@ -73,7 +68,8 @@ input{
 
     .vividworknav img {
       padding: 0;
-      width: 100%;
+      height: 200px;
+      width:300px;
       display: block;
       opacity: 1;
     }
@@ -97,6 +93,16 @@ input{
       text-align: center;
       opacity: 0;
     }
+
+@media screen and (max-width: 500px){
+  .row{
+    display: none;
+  }
+  #hiddenTitles{
+    display: block;
+  }
+
+}
 
 /*NAVBAR STYLINGS*/
 .navbar-brand { position: relative; z-index: 2; }
