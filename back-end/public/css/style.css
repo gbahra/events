@@ -331,7 +331,7 @@ input{
 /* FOOTER STYLINGS*/
 
 .full {
-    width: 100%;
+  width: 100%;
 }
 .gap {
   height: 30px;
@@ -343,7 +343,6 @@ input{
   background: #EDEFF1;
   height: auto;
   padding-bottom: 30px;
-  position: fixed;
   width: 100%;
   border-bottom: 1px solid #CCCCCC;
   border-top: 1px solid #DDDDDD;
