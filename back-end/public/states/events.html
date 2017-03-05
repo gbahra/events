@@ -1,5 +1,5 @@
-<section ng-init = 'event.getButtonEvents()'>
-  <div ng-repeat = 'e in event.all'>
+<section ng-init = 'event.getLocationEvents()'>
+  <div ng-repeat = 'e in event.locationEvents'>
     <img src='{{e.largeimageurl}}'>
     <p><a ui-sref="show({ event: e.eventname})">{{e.eventname}}</a></p>
     <p>{{e.venue.town}}</p>
