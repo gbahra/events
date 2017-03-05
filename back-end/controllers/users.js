@@ -2,20 +2,9 @@ var User= require("../models/User");
 var bodyParser = require('body-parser');
 var request = require('request');
 var rP = require('request-promise');
-var sendmail = require('sendmail')({
-  logger: {
-    debug: console.log,
-    info: console.info,
-    warn: console.warn,
-    error: console.error
-  },
-  silent: false,
-  dkim: { // Default: False
-    privateKey: fs.readFileSync('./dkim-private.pem', 'utf8'),
-    keySelector: 'mydomainkey'
-  },
-  devPort: 1025 // Default: False
-})
+var sendmail = require('sendmail')({silent: true})
+
+
 
 function indexUsers(req, res){
   User.find({} , function(err, users) {
@@ -72,15 +61,17 @@ function createUsers(req, res){
       console.log(err)
       return res.status(500).json(err)
     }
+    console.log(user.email);
     sendmail({
       from: 'gurpal_bahra@hotmail.co.uk',
-      to: 'gurpal_bahra@hotmail.co.uk',
-      subject: 'test sendmail',
-      html: 'Mail of test sendmail ',
-    }, function(err, reply) {
-        console.log(err && err.stack);
-        console.dir(reply);
-      });
+      to: user.email,
+      subject: 'MailComposer sendmail',
+      html: 'Mail of test sendmail '
+    }, function (err, reply) {
+      console.log(err && err.stack)
+      console.dir(reply)
+      console.log('emaillll')
+    })
     res.status(201).json({ user: user });
   });
 }

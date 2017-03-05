@@ -34,7 +34,8 @@ function userController(Auth, User, $stateParams, $state){
     })
     user.delete().then(function(response){
       console.log('firebase delete')
-       $state.go('home')
+
+      $state.go('home')
     })
 
 

@@ -41,5 +41,9 @@ angular
     function resetCredentials(){
       self.email = "";
       self.password = "";
+      self.first_name = "";
+      self.last_name = "";
+      self.mobile_number="";
+      self.post_code="";
     }
   }
