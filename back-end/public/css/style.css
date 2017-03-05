@@ -4,9 +4,16 @@
   margin-left: 150px;
 }
 
-img{
+.location{
+
+}
+
+.vividworknav{
+  background-color: white;
   height:200px;
   width:200px;
+  margin-left: 100px;
+  margin-top: 20px;
 }
 
 h1{
