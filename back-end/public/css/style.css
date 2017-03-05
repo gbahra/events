@@ -10,13 +10,7 @@ h1{
   text-align:center;
 }
 
-.navbar{
-  margin-left: -19px;
-}
 
-.container{
-  margin-left: -5px;
-}
 
 #unAuth{
   margin-left: -1px;
@@ -44,8 +38,8 @@ input{
   margin: 10px;
 }
 /*LOCATION IMAGES STYLINGS*/
-#hiddenTitles{
-  display: hidden;
+#hiddenTitles>h1{
+  visibility: hidden;
 }
   .vividworknav {
       margin-left: 100px;
@@ -98,14 +92,15 @@ input{
   .row{
     display: none;
   }
-  #hiddenTitles{
-    display: block;
+ #hiddenTitles>h1{
+    visibility: visible;
   }
-
 }
 
 /*NAVBAR STYLINGS*/
 .navbar-brand { position: relative; z-index: 2; }
+.container{ width:100vw; background-color:#222222;}
+.navbar .navbar-inverse{ width:120vw; background-color:#222222;}
 
 .navbar-nav.navbar-right .btn { position: relative; z-index: 2; padding: 4px 20px; margin: 10px auto; transition: transform 0.3s; }
 
