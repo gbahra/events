@@ -1,12 +1,15 @@
 <section ng-init = 'event.getLocationEvents()'>
-  <div ng-repeat = 'e in event.locationEvents'>
-    <img src='{{e.largeimageurl}}'>
-    <p><a ui-sref="show({ event: e.eventname})">{{e.eventname}}</a></p>
-    <p>{{e.venue.town}}</p>
-    <p ng-repeat = 'artist in e.artists'>
-        {{artist.name}}
-    </p>
-    <p>{{e.date}}</p>
-    <p>{{e.openingtimes.doorsopen}}</p>
-  </div>
+  <h1>Events</h1>
+  <section class = 'event' ng-repeat = 'e in event.locationEvents'>
+      <h1><a ui-sref="show({ event: e.eventname})">{{e.eventname}}</a></h1>
+      <img src='{{e.largeimageurl}}'>
+      <div ng-repeat = 'artist in e.artists'>
+          <span>{{artist.name}}</span>
+      </div>
+      <p> <span class="glyphicon glyphicon-road"></span> {{e.venue.address}} {{e.venue.town}} {{e.venue.postcode}}</p>
+      <p><span class="glyphicon glyphicon-calendar"></span> {{e.date}}</p>
+      <p> <span class="glyphicon glyphicon-time"></span>{{e.openingtimes.doorsopen}} - {{e.openingtimes.doorsclose}} Last Entry:{{e.openingtimes.lastentry}}</p>
+      <p ng-if = "e.tickets"><span class="glyphicon glyphicon-shopping-cart"></span> Tickets Availble</p>
+      <p ng-if = "!e.tickets"><span class="glyphicon glyphicon-shopping-cart"></span> Tickets Sold Out</p>
+  </section>
 </section>

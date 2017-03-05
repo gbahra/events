@@ -1,30 +1,44 @@
-#show{
-  margin-top: -35px;
+body{
+  background-color: #3C3A39;
+}
+h1{
+  text-align: center;
+  margin-top: -10px;
+  margin-bottom: 15px;
+  background-color: #3C3A39;
+  color: white;
+}
+.event{
+  margin-top: -2px;
   background-color:#3C3A39;
   color:white;
   height: 40vh;
 }
 
-#show>img{
+.event>img{
   float:right;
+  margin-right: 100px;
+  width: 200px;
+  height: 200px;
 }
 
-#show>h1{
+.event>h1{
   font-size: 40px;
+  margin-bottom: 8px;
+  text-align:center;
 }
 
-#show>p{
+.event>p{
   font-size: 30px;
   margin: 3px;
 }
 
 .greenSection{
   background-color: #DEEEE8;
-  margin-top: 65px;
   height: 30vh;
   width: 80%;
-  margin-left: 150px;
-  margin-bottom: 65px
+  margin: 65px 150px;
+
 }
 
 .greenSection>h3{
@@ -41,12 +55,71 @@
   margin: 8px;
 }
 
-h1{
-  margin-bottom: 8px;
+@media screen and (max-width: 1040px){
+  .event>img{
+    visibility: hidden;
+  }
+
+  .greenSection{
+    width:70%;
+  }
+
+  .greenSection>h3{
+    font-size: 20px;
+  }
+
+  .greenSection>p{
+    font-size: 15px;
+  }
 }
 
-h1{
-  text-align:center;
+@media screen and (max-width: 910px){
+
+  .greenSection{
+    width:60%;
+  }
+
+  .event>h1{
+    font-size: 35px;
+  }
+
+  .event>p{
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 650px){
+
+  .greenSection{
+    width:50%;
+  }
+
+  .greenSection>h3{
+    font-size: 18px;
+  }
+
+  .greenSection>p{
+    font-size: 13px;
+  }
+
+  .event>h1{
+    font-size: 30px;
+  }
+
+  .event>p{
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 500px){
+
+  .event>h1{
+    font-size: 25px;
+  }
+
+  .event>p{
+    font-size: 12px;
+  }
 }
 
 #unAuth{
@@ -270,7 +343,7 @@ input{
   background: #EDEFF1;
   height: auto;
   padding-bottom: 30px;
-  position: relative;
+  position: fixed;
   width: 100%;
   border-bottom: 1px solid #CCCCCC;
   border-top: 1px solid #DDDDDD;
@@ -381,10 +454,9 @@ input{
   color: #EDEFF1 !important;
 }
 .footer-bottom {
+  position: fixed;
   background: #E3E3E3;
   border-top: 1px solid #DDDDDD;
-  padding-top: 10px;
-  padding-bottom: 10px;
 }
 .footer-bottom p.pull-left {
   padding-top: 6px;
