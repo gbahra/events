@@ -1,13 +1,23 @@
-body{
+.divider{
+  height:25vh;
+}
+
+.editDivider{
+  height:7vh;
+}
+
+.events{
   background-color: #3C3A39;
 }
-h1{
+
+.events>h1{
   text-align: center;
   margin-top: -10px;
   margin-bottom: 15px;
   background-color: #3C3A39;
   color: white;
 }
+
 .event{
   margin-top: -2px;
   background-color:#3C3A39;
@@ -71,6 +81,10 @@ h1{
   .greenSection>p{
     font-size: 15px;
   }
+}
+
+form{
+  height:70%;
 }
 
 @media screen and (max-width: 910px){
@@ -456,6 +470,7 @@ input{
   position: fixed;
   background: #E3E3E3;
   border-top: 1px solid #DDDDDD;
+  width:100vw;
 }
 .footer-bottom p.pull-left {
   padding-top: 6px;

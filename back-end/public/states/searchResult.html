@@ -1,23 +1,19 @@
-<h1>search</h1>
-<section id = 'cards' ng-init = 'event.search()'>
-  <div class="row">
-    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-    <div ng-repeat = 'items in event.searchItems.results'>
-      <img class="card-img-top" src="{{items.largeimageurl}}" alt="Card image cap">
-      <div class="card-block">
-        <h4 class="card-title"><a ui-sref="show({event: items.eventname})">{{items.eventname}}</a></h4>
-        <p>{{items.venue.town}}</p>
-        <p>
-          <div ng-repeat = 'artist in items.artists'>
-            <span>{{artist.name}}</span>
-          </div>
-        </p>
-        <p>{{items.date}}</p>
-        <p>{{items.openingtimes.doorsopen}}</p>
+<section class = 'events' ng-init = 'event.search()'>
+  <h1>Search Results</h1>
+  <div ng-repeat = 'items in event.searchItems.results'>
+    <section class = 'event'>
+      <h1>{{items.eventname}}</h1>
+      <img src='{{items.largeimageurl}}'>
+      <div ng-repeat = 'artist in items.artists'>
+          <span>{{artist.name}}</span>
       </div>
-    </div>
+      <p> <span class="glyphicon glyphicon-road"></span> {{items.venue.address}} {{items.venue.town}} {{items.venue.postcode}}</p>
+      <p><span class="glyphicon glyphicon-calendar"></span> {{items.date}}</p>
+      <p> <span class="glyphicon glyphicon-time"></span>{{items.openingtimes.doorsopen}} - {{items.openingtimes.doorsclose}} Last Entry:{{items.openingtimes.lastentry}}</p>
+      <p ng-if = "items.tickets"><span class="glyphicon glyphicon-shopping-cart"></span> Tickets Availble</p>
+      <p ng-if = "!items.tickets"><span class="glyphicon glyphicon-shopping-cart"></span> Tickets Sold Out</p>
+    </section>
   </div>
-</div>
 </section>
 
 

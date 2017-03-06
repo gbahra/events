@@ -1,4 +1,4 @@
-<section ng-init = 'event.getLocationEvents()'>
+<section class = 'events' ng-init = 'event.getLocationEvents()'>
   <h1>Events</h1>
   <section class = 'event' ng-repeat = 'e in event.locationEvents'>
       <h1><a ui-sref="show({ event: e.eventname})">{{e.eventname}}</a></h1>
