@@ -28,7 +28,7 @@ function MainRouter($stateProvider, $urlRouterProvider){
       templateUrl: 'states/events.html'
     })
     .state('home',{
-      url: '/home',
+      url: '/',
       templateUrl: 'states/home.html',
     })
     .state('searchResult',{

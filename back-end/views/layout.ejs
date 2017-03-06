@@ -26,7 +26,6 @@
 <body ng-controller = "eventController as event">
   <section ng-controller = 'authenticationController as auth'>
   <header>
-
     <!-- <img id = "headerImage" src="https://images.unsplash.com/photo-1483101974978-cf266fdf1139?dpr=1"> -->
     <div ng-if = 'auth.user'>
       <nav class="navbar navbar-inverse">
@@ -50,7 +49,7 @@
               <li>
                 <a class="btn btn-default btn-outline btn-circle collapsed"  data-toggle="collapse" href="#nav-collapse3" aria-expanded="false" aria-controls="nav-collapse3">Search</a>
               </li>
-              <li><a ui-sref="home"> {{auth.user.email}} is logged in</a></li>
+              <li id = "user"><a ui-sref="home"> {{auth.user.email}} is logged in</a></li>
             </ul>
             <div class="collapse nav navbar-nav nav-collapse slide-down" id="nav-collapse3">
               <form class="navbar-form navbar-right" id = 'searchBar' role="search">
