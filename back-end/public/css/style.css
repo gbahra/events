@@ -1,3 +1,4 @@
+
 .divider{
   height:25vh;
 }
@@ -351,8 +352,9 @@ input{
   display: block;
 }
 .footer {
+  position: relative;
   background: #EDEFF1;
-  height: auto;
+  height: 100%;
   width: 100%;
   border-bottom: 1px solid #CCCCCC;
   border-top: 1px solid #DDDDDD;
@@ -462,17 +464,19 @@ input{
   margin-left: 2px;
   color: #EDEFF1 !important;
 }
-/*.footer-bottom {
-  position: fixed;
+.footer-bottom {
+  position: relative;
   background: #E3E3E3;
   border-top: 1px solid #DDDDDD;
   width:100vw;
+  height:
 }
 .footer-bottom p.pull-left {
   padding-top: 6px;
 }
 .payments {
   font-size: 1.5em;
-}*/
+}
+
 
 

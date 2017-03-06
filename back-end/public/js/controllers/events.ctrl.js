@@ -7,9 +7,10 @@ function eventController(Auth, User, Events, $stateParams, $state){
   self.searchTerm = '';
   self.getEvents = function(){
     Events.get().then(function(response){
+      console.log(response)
       var body = JSON.parse(response.data.body)
       self.all = body.results
-      console.log(response)
+
     })
   }
 

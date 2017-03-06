@@ -136,7 +136,6 @@ function deleteUsers(req, res){
   });
 }
 
-
 module.exports = {
   index : indexUsers,
   show : showUsers,
