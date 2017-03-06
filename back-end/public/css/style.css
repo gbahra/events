@@ -9,8 +9,13 @@
 #artists{
   display: inline-block;
 }
+
 .divider{
   height:25vh;
+}
+
+h1{
+  text-align: center;
 }
 
 .editDivider{
