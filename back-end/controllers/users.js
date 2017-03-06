@@ -3,6 +3,9 @@ var bodyParser = require('body-parser');
 var request = require('request');
 var rP = require('request-promise');
 var sendmail = require('sendmail')({silent: true})
+var TMClient = require('textmagic-rest-client');
+
+
 
 
 
@@ -80,8 +83,13 @@ function favouriteUsers(req, res){
   console.log(req.body.term)
   User.findOneAndUpdate(
     {uid: req.body.term.uid},
-    {$addToSet : {favourites: req.body.term.event}}
-    ,function(err, user){
+    {$addToSet : {favourites: req.body.term.event}},
+    {new: true},
+    function(err, user){
+      var c = new TMClient('username', 'C7XDKZOQZo6HvhJwtUw0MBcslfqwtp4');
+      c.Messages.send({text: 'test message', phones:'0' + user.mobile_number}, function(err, res){
+        console.log('Messages.send()', err, res, user.mobile_number);
+      });
       res.status(204)
     }
   )
