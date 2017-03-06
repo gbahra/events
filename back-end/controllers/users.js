@@ -123,8 +123,8 @@ function updateUsers(req,res){
     {uid: req.params.id},
     req.body
     ,function(err, user){
-      console.log(user)
-
+      if(err) res.send(err)
+      res.status(200).send()
     }
   )
 }

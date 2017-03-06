@@ -462,7 +462,7 @@ input{
   margin-left: 2px;
   color: #EDEFF1 !important;
 }
-.footer-bottom {
+/*.footer-bottom {
   position: fixed;
   background: #E3E3E3;
   border-top: 1px solid #DDDDDD;
@@ -473,6 +473,6 @@ input{
 }
 .payments {
   font-size: 1.5em;
-}
+}*/
 
 

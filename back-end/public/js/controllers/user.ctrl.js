@@ -24,6 +24,8 @@ function userController(Auth, User, $stateParams, $state){
       .then(function(response){
         console.log('yhhhh')
         $state.go('home')
+      }).catch(function(err){
+        console.log(err)
       })
   }
   self.delete = function(){
