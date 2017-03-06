@@ -18,7 +18,6 @@ function showUsers(req, res) {
   User.find({uid: req.params.id}, function(err, user) {
     if(!user) return res.status(404).send("Not found");
     if(err) return res.status(500).send(err);
-    console.log(user)
     res.json({
      user : user
     });
@@ -35,12 +34,12 @@ function getFavouriteUsers(req, res){
     for(var i = 0; i < user.favourites.length; i++){
       promiseArr.push(newAPIpromise(user.favourites[i]));
     }
-    console.log(promiseArr)
+
     Promise.all(promiseArr).then(function (responseArr) {
-      console.log(responseArr.length)
+
         return res.status(200).json({ 'results': responseArr });
     }).catch(function (err) {
-      console.log(err)
+
       return res.status(500).json({ 'err': err });
     })
   });
@@ -118,7 +117,6 @@ function favouriteUsers(req, res){
 }
 
 function updateUsers(req,res){
-  console.log(req.body)
   User.findOneAndUpdate(
     {uid: req.params.id},
     req.body
@@ -130,9 +128,7 @@ function updateUsers(req,res){
 }
 
 function deleteUsers(req, res){
-  console.log(req.params.id)
   User.findOneAndRemove({uid: req.params.id}, function(err) {
-    console.log("delete")
   });
 }
 

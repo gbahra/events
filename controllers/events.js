@@ -46,7 +46,7 @@ function showEvents(req, res){
 function getLocationEvents(req, res){
   request('http://www.skiddle.com/api/v1/events/search/?api_key=' + process.env.TOKENVARNAME + '&city='+ req.params.location, function (error, response, body) {
       if (error) return res.status(500).json(error)
-      console.log(response)
+
       res.json(response)
     }
   )

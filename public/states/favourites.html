@@ -1,7 +1,7 @@
-<h1>favourites</h1>
-<section  class = 'event' ng-init = 'event.getFavourites()'>
-  <div ng-repeat = 'e in event.fav'>
-    <h1>{{e.eventname}}</h1>
+<section  class = 'events' ng-init = 'event.getFavourites()'>
+  <h1>Favourites</h1>
+  <section  class = 'event' ng-repeat = 'e in event.fav'>
+    <h1><a ui-sref="show({ event: e.eventname})">{{e.eventname}}</a></h1>
     <img src='{{e.largeimageurl}}'>
     <div ng-repeat = 'artist in e.artists'>
         <span>{{artist.name}}</span>
@@ -11,5 +11,5 @@
     <p> <span class="glyphicon glyphicon-time"></span>{{e.openingtimes.doorsopen}} - {{e.openingtimes.doorsclose}} Last Entry:{{e.openingtimes.lastentry}}</p>
     <p ng-if = "e.tickets"><span class="glyphicon glyphicon-shopping-cart"></span> Tickets Availble</p>
     <p ng-if = "!e.tickets"><span class="glyphicon glyphicon-shopping-cart"></span> Tickets Sold Out</p>
-  </div>
+  </section>
 </section>
