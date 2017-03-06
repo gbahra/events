@@ -9,9 +9,6 @@
 #artists{
   display: inline-block;
 }
-span{
-  display: inline-block;
-}
 .divider{
   height:25vh;
 }
