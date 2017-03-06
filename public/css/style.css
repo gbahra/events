@@ -286,7 +286,7 @@ input{
 .navbar-nav.navbar-right { margin: auto; text-align: center;  }
 .navbar .navbar-collapse { position: relative; overflow: hidden !important; }
 .navbar .navbar-collapse .navbar-right > li:last-child { padding-left: 22px; }
-
+#nav-collapse3{ float: right; }
 .navbar .nav-collapse { position: absolute; z-index: 1; top: 0; left: 0; right: 0; bottom: 0; margin: 0; padding-right: 120px; padding-left: 80px; width: 100%; }
 .navbar.navbar-default .nav-collapse { background-color: #222; }
 .navbar.navbar-inverse .nav-collapse { background-color: #222; }
@@ -299,6 +299,7 @@ input{
     background-color: rgb(111, 84, 153);
     border-color: rgb(111, 84, 153);
     color: rgb(255, 255, 255);
+    margin-right: 100px;
 }
 
 .navbar.navbar-default .nav-collapse,
