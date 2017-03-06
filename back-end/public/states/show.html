@@ -18,7 +18,7 @@
   <section class="greenSection">
     <h3>Event Info</h3>
     <p>{{event.show.description}}</p>
-    <p>Ticket Prices - £{{event.show.entryprice}}</p>
+    <p>Ticket Prices - {{event.show.entryprice}}</p>
     <p>Venue Rating - {{event.show.venue.rating}} Stars</p>
     <div ng-controller = 'userController as user'>
       <button class="btn btn-success" ng-click = 'user.favourite({event: event.show.eventname})'>I'm going</button>

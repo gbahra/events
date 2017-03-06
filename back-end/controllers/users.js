@@ -3,11 +3,7 @@ var bodyParser = require('body-parser');
 var request = require('request');
 var rP = require('request-promise');
 var sendmail = require('sendmail')({silent: true})
-var TMClient = require('textmagic-rest-client');
-
-
-
-
+var https = require('https');
 
 function indexUsers(req, res){
   User.find({} , function(err, users) {
@@ -68,29 +64,55 @@ function createUsers(req, res){
     sendmail({
       from: 'gurpal_bahra@hotmail.co.uk',
       to: user.email,
-      subject: 'MailComposer sendmail',
-      html: 'Mail of test sendmail '
+      subject: 'Welcome to eventListener',
+      html: 'Welcome to eventListener'
     }, function (err, reply) {
       console.log(err && err.stack)
       console.dir(reply)
-      console.log('emaillll')
     })
     res.status(201).json({ user: user });
   });
 }
 
 function favouriteUsers(req, res){
-  console.log(req.body.term)
   User.findOneAndUpdate(
     {uid: req.body.term.uid},
     {$addToSet : {favourites: req.body.term.event}},
     {new: true},
     function(err, user){
-      var c = new TMClient('username', 'C7XDKZOQZo6HvhJwtUw0MBcslfqwtp4');
-      c.Messages.send({text: 'test message', phones:'0' + user.mobile_number}, function(err, res){
-        console.log('Messages.send()', err, res, user.mobile_number);
+      console.log(user.mobile_number)
+      var data = JSON.stringify({
+        api_key: '372fcf4d',
+        api_secret: '49224acfd0d88410',
+        to: '44' + user.mobile_number,
+        from: '441632960961',
+        text: 'You favourited this event' + user.favourites[user.favourites.length-1]
       });
-      res.status(204)
+
+      var options = {
+        host: 'rest.nexmo.com',
+        path: '/sms/json',
+        port: 443,
+        method: 'POST',
+        headers: {
+         'Content-Type': 'application/json',
+         'Content-Length': Buffer.byteLength(data)
+        }
+      };
+      var req = https.request(options);
+      req.write(data);
+      req.end();
+
+      var responseData = '';
+      req.on('response', function(res){
+        res.on('data', function(chunk){
+         responseData += chunk;
+        });
+        res.on('end', function(){
+         console.log(JSON.parse(responseData));
+        });
+      });
+
     }
   )
 }

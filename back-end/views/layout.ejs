@@ -2,7 +2,7 @@
 <html ng-app='events'>
 <head>
   <title>events</title>
-
+  <meta charset="UTF-8">
   <!-- styling tags -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -28,45 +28,8 @@
   <header>
 
     <!-- <img id = "headerImage" src="https://images.unsplash.com/photo-1483101974978-cf266fdf1139?dpr=1"> -->
-      <div ng-if = 'auth.user'>
-        <nav class="navbar navbar-inverse">
-          <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-3">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" <a href = '#' ui-sref="home">eventListener</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="navbar-collapse-3">
-              <ul class="nav navbar-nav navbar-right">
-                <li><a href = '#' ui-sref="edit({uid: auth.uid})">edit profile</a></li>
-                <li><a href = '#' ui-sref="favourites">favourites</a></li>
-                <li> <a href = '#' ng-click = 'auth.signOut()'>signout</a></li>
-                <li>
-                  <a class="btn btn-default btn-outline btn-circle collapsed"  data-toggle="collapse" href="#nav-collapse3" aria-expanded="false" aria-controls="nav-collapse3">Search</a>
-                </li>
-              </ul>
-              <div class="collapse nav navbar-nav nav-collapse slide-down" id="nav-collapse3">
-                <form class="navbar-form navbar-right" id = 'searchBar' role="search">
-                  <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search" ng-model = 'event.searchTerm'>
-                  </div>
-                  <button type="submit" class="btn btn-danger"><a href = '#' ui-sref="searchResult"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></button>
-                </form>
-              </div>
-            </div><!-- /.navbar-collapse -->
-          </div><!-- /.container -->
-        </nav><!-- /.navbar -->
-      </header>
-    </div>
-    </div>
-    <div ng-if = '!auth.user'>
-      <nav class="navbar navbar-inverse" id = 'unAuth'>
+    <div ng-if = 'auth.user'>
+      <nav class="navbar navbar-inverse">
         <div class="container">
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
@@ -76,90 +39,127 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">eventListener</a>
+            <a class="navbar-brand" <a href = '#' ui-sref="home">eventListener</a>
           </div>
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="navbar-collapse-3">
             <ul class="nav navbar-nav navbar-right">
-              <li><a href = '#' ui-sref='login'>login</a></li>
-              <li> <a href = '#' ui-sref='signUp'>sign up</a></li>
+              <li><a href = '#' ui-sref="edit({uid: auth.uid})">edit profile</a></li>
+              <li><a href = '#' ui-sref="favourites">favourites</a></li>
+              <li> <a href = '#' ng-click = 'auth.signOut()'>signout</a></li>
+              <li>
+                <a class="btn btn-default btn-outline btn-circle collapsed"  data-toggle="collapse" href="#nav-collapse3" aria-expanded="false" aria-controls="nav-collapse3">Search</a>
+              </li>
             </ul>
             <div class="collapse nav navbar-nav nav-collapse slide-down" id="nav-collapse3">
-              <form class="navbar-form navbar-right" role="search">
+              <form class="navbar-form navbar-right" id = 'searchBar' role="search">
                 <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Search" />
+                  <input type="text" class="form-control" placeholder="Search" ng-model = 'event.searchTerm'>
                 </div>
-                <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                <button type="submit" class="btn btn-danger"><a href = '#' ui-sref="searchResult"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></button>
               </form>
             </div>
           </div><!-- /.navbar-collapse -->
-       <!-- /.container -->
-      </nav>
-    </div>
-    <section  ui-view></section>
-  </section>
-  <footer>
-    <div class="footer" id="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
-                    <h3> eventListener </h3>
-                    <ul>
-                        <li> <a href="#"> Terms & Conditions </a> </li>
-                        <li> <a href="#"> Privacy </a> </li>
-                        <li> <a href="#"> Secruity </a> </li>
-                        <li> <a href="#"> Help </a> </li>
-                    </ul>
-                </div>
-                <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
-                    <h3> About Us </h3>
-                    <ul>
-                        <li> <a href="#"> API </a> </li>
-                        <li> <a href="#"> About </a> </li>
-                        <li> <a href="#"> Training </a> </li>
-                        <li> <a href="#"> Blog </a> </li>
-                    </ul>
-                </div>
-                <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
-                    <h3> Work With Us </h3>
-                    <ul>
-                        <li> <a href="#"> Vacancies </a> </li>
-                        <li> <a href="#"> Job Roles </a> </li>
-                        <li> <a href="#"> Internships </a> </li>
-                        <li> <a href="#"> Other </a> </li>
-                    </ul>
-                </div>
-                <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
-                    <h3> Help and FAQs </h3>
-                    <ul>
-                        <li> <a href="#"> FAQ </a> </li>
-                        <li> <a href="#"> Help Centre </a> </li>
-                        <li> <a href="#"> Contact Us </a> </li>
-                        <li> <a href="#"> Locator </a> </li>
-                    </ul>
-                </div>
-                <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
-                    <h3> Contact Us </h3>
-                    <ul>
-                        <li>
-                            <div class="input-append newsletter-box text-center">
-                                <input type="text" class="full text-center" placeholder="Email... ">
-                                <button class="btn  bg-gray" type="button"> Email Us <i class="fa fa-long-arrow-right"> </i> </button>
-                            </div>
-                        </li>
-                    </ul>
-                    <ul class="social">
-                        <li> <a href="#"> <i class=" fa fa-facebook">   </i> </a> </li>
-                        <li> <a href="#"> <i class="fa fa-twitter">   </i> </a> </li>
-                        <li> <a href="#"> <i class="fa fa-google-plus">   </i> </a> </li>
-                        <li> <a href="#"> <i class="fa fa-pinterest">   </i> </a> </li>
-                        <li> <a href="#"> <i class="fa fa-youtube">   </i> </a> </li>
-                    </ul>
-                </div>
-            </div>
-            <!--/.row-->
+        </div><!-- /.container -->
+      </nav><!-- /.navbar -->
+    </header>
+  </div>
+  </div>
+  <div ng-if = '!auth.user'>
+    <nav class="navbar navbar-inverse" id = 'unAuth'>
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-3">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">eventListener</a>
         </div>
-        <!--/.container-->
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-collapse-3">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href = '#' ui-sref='login'>login</a></li>
+            <li> <a href = '#' ui-sref='signUp'>sign up</a></li>
+          </ul>
+          <div class="collapse nav navbar-nav nav-collapse slide-down" id="nav-collapse3">
+            <form class="navbar-form navbar-right" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search" />
+              </div>
+              <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+            </form>
+          </div>
+        </div><!-- /.navbar-collapse -->
+     <!-- /.container -->
+    </nav>
+  </div>
+  <section  ui-view></section>
+</section>
+<footer>
+  <div class="footer" id="footer">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+                  <h3> eventListener </h3>
+                  <ul>
+                      <li> <a href="#"> Terms & Conditions </a> </li>
+                      <li> <a href="#"> Privacy </a> </li>
+                      <li> <a href="#"> Secruity </a> </li>
+                      <li> <a href="#"> Help </a> </li>
+                  </ul>
+              </div>
+              <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+                  <h3> About Us </h3>
+                  <ul>
+                      <li> <a href="#"> API </a> </li>
+                      <li> <a href="#"> About </a> </li>
+                      <li> <a href="#"> Training </a> </li>
+                      <li> <a href="#"> Blog </a> </li>
+                  </ul>
+              </div>
+              <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+                  <h3> Work With Us </h3>
+                  <ul>
+                      <li> <a href="#"> Vacancies </a> </li>
+                      <li> <a href="#"> Job Roles </a> </li>
+                      <li> <a href="#"> Internships </a> </li>
+                      <li> <a href="#"> Other </a> </li>
+                  </ul>
+              </div>
+              <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+                  <h3> Help and FAQs </h3>
+                  <ul>
+                      <li> <a href="#"> FAQ </a> </li>
+                      <li> <a href="#"> Help Centre </a> </li>
+                      <li> <a href="#"> Contact Us </a> </li>
+                      <li> <a href="#"> Locator </a> </li>
+                  </ul>
+              </div>
+              <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
+                  <h3> Contact Us </h3>
+                  <ul>
+                      <li>
+                          <div class="input-append newsletter-box text-center">
+                              <input type="text" class="full text-center" placeholder="Email... ">
+                              <button class="btn  bg-gray" type="button"> Email Us <i class="fa fa-long-arrow-right"> </i> </button>
+                          </div>
+                      </li>
+                  </ul>
+                  <ul class="social">
+                      <li> <a href="#"> <i class=" fa fa-facebook">   </i> </a> </li>
+                      <li> <a href="#"> <i class="fa fa-twitter">   </i> </a> </li>
+                      <li> <a href="#"> <i class="fa fa-google-plus">   </i> </a> </li>
+                      <li> <a href="#"> <i class="fa fa-pinterest">   </i> </a> </li>
+                      <li> <a href="#"> <i class="fa fa-youtube">   </i> </a> </li>
+                  </ul>
+              </div>
+          </div>
+          <!--/.row-->
+      </div>
+      <!--/.container-->
     </div>
     <!--/.footer-->
 
