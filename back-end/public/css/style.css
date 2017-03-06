@@ -6,6 +6,12 @@
   height: 10vh;
 }
 
+#artists{
+  display: inline-block;
+}
+span{
+  display: inline-block;
+}
 .divider{
   height:25vh;
 }
@@ -51,6 +57,11 @@
   margin: 3px;
 }
 
+.event>span{
+  font-size: 30px;
+  margin: 3px;
+}
+
 .greenSection{
   background-color: #DEEEE8;
   height: 30vh;
@@ -90,6 +101,17 @@
     margin:auto;
   }
 
+  .event>span{
+    text-align:center;
+    margin: auto;
+    display: block;
+  }
+
+  #artists{
+    text-align:center;
+    margin:auto;
+    display: block;
+  }
   .greenSection{
     width:70%;
   }
@@ -120,6 +142,10 @@ form{
   .event>p{
     font-size: 22px;
   }
+
+  .event>span{
+    font-size: 22px;
+  }
 }
 
 @media screen and (max-width: 650px){
@@ -143,6 +169,10 @@ form{
   .event>p{
     font-size: 20px;
   }
+
+  .event>span{
+    font-size: 20px;
+  }
 }
 
 @media screen and (max-width: 500px){
@@ -152,6 +182,10 @@ form{
   }
 
   .event>p{
+    font-size: 15px;
+  }
+
+  .event>span{
     font-size: 15px;
   }
 }
@@ -245,7 +279,7 @@ input{
 
 .navbar-brand { position: relative; z-index: 2; }
 .navbar-nav.navbar-right .btn { position: relative; z-index: 2; padding: 4px 20px; margin: 10px auto; transition: transform 0.3s; }
-
+.navbar-nav.navbar-right { float: right; }
 .navbar .navbar-collapse { position: relative; overflow: hidden !important; }
 .navbar .navbar-collapse .navbar-right > li:last-child { padding-left: 22px; }
 

@@ -5,9 +5,10 @@
     <img src='{{e.largeimageurl}}'>
     <p><a ui-sref="show({ event: e.eventname})">{{e.eventname}}</a></p>
     <p>{{e.venue.town}}</p>
-    <!-- <p ng-repeat = 'artist in e.artists'>
+    <p id = 'artists' ng-repeat = 'artist in e.artists  | limitTo:2 '>
       {{artist.name}}
-    </p> -->
+    </p>
+    <span ng-if = 'e.artists.length >2'> and more</span>
     <p>{{e.date}}</p>
     <p>{{e.openingtimes.doorsopen}}</p>
   </div>
