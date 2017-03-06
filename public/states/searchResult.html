@@ -2,7 +2,8 @@
   <h1>Search Results</h1>
   <div ng-repeat = 'items in event.searchItems.results'>
     <section class = 'event'>
-      <h1>{{items.eventname}}</h1>
+    <h1>{{e.eventname}}</a></h1>
+      <h1><a ui-sref="show({ event: items.eventname})">{{items.eventname}}</a></h1>
       <img src='{{items.largeimageurl}}'>
       <div ng-repeat = 'artist in items.artists'>
           <span>{{artist.name}}</span>
