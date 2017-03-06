@@ -1,3 +1,10 @@
+#searchByCity{
+  text-align:center;
+}
+
+#topDivider{
+  height: 10vh;
+}
 
 .divider{
   height:25vh;
@@ -69,6 +76,18 @@
 @media screen and (max-width: 1040px){
   .event>img{
     visibility: hidden;
+    width:0px;
+    height:0px;
+  }
+
+  .event>h1{
+    text-align:center;
+    margin: auto;
+  }
+
+  .event>p{
+    text-align:center;
+    margin:auto;
   }
 
   .greenSection{
@@ -95,11 +114,11 @@ form{
   }
 
   .event>h1{
-    font-size: 35px;
+    font-size: 32px;
   }
 
   .event>p{
-    font-size: 25px;
+    font-size: 22px;
   }
 }
 
@@ -110,11 +129,11 @@ form{
   }
 
   .greenSection>h3{
-    font-size: 18px;
+    font-size: 15px;
   }
 
   .greenSection>p{
-    font-size: 13px;
+    font-size: 10px;
   }
 
   .event>h1{
@@ -129,11 +148,11 @@ form{
 @media screen and (max-width: 500px){
 
   .event>h1{
-    font-size: 25px;
+    font-size: 20px;
   }
 
   .event>p{
-    font-size: 12px;
+    font-size: 15px;
   }
 }
 
@@ -156,7 +175,7 @@ button{
 }
 
 input{
-    margin: 3px;
+  margin: 3px;
 }
 
 /*LOCATION IMAGES STYLINGS*/
@@ -165,10 +184,9 @@ input{
   visibility: hidden;
 }
 .vividworknav {
-  margin-left: 100px;
-  margin-top: 20px;
+  margin: 20px 200px 0px 200px;
   height: 200px;
-  width:300px;
+  width: 300px;
   float: left;
   padding: 0;
   position: relative;
@@ -217,6 +235,7 @@ input{
   }
  #hiddenTitles>h1{
     visibility: visible;
+    text-align: center;
   }
 }
 
@@ -257,6 +276,7 @@ input{
 
 
 @media screen and (max-width: 767px) {
+
     .navbar .navbar-collapse .navbar-right > li:last-child { padding-left: 15px; padding-right: 15px; }
 
     .navbar .nav-collapse { margin: 7.5px auto; padding: 0; }
@@ -435,7 +455,7 @@ input{
   float: left;
   height: 36px;
   line-height: 36px;
-  margin: 0 8px 0 0;
+  margin: 0 8px 3px 0;
   padding: 0;
   text-align: center;
   width: 36px;

@@ -5,12 +5,11 @@ angular
 function eventController(Auth, User, Events, $stateParams, $state){
   var self = this;
   self.searchTerm = '';
+
   self.getEvents = function(){
     Events.get().then(function(response){
-      console.log(response)
-      var body = JSON.parse(response.data.body)
-      self.all = body.results
-
+      self.all = response.data
+      console.log(self.all)
     })
   }
 

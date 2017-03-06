@@ -1,22 +1,22 @@
-<h1>home</h1>
+
+<section class = 'events' ng-init = 'event.getEvents()'>
 <h1>Trending Events</h1>
-<section ng-init = 'event.getEvents()'>
-  <div ng-repeat = 'e in event.all'>
+  <div class = 'event' ng-repeat = 'e in event.all.events.results'>
     <img src='{{e.largeimageurl}}'>
     <p><a ui-sref="show({ event: e.eventname})">{{e.eventname}}</a></p>
     <p>{{e.venue.town}}</p>
-    <p ng-repeat = 'artist in e.artists'>
-        {{artist.name}}
-    </p>
+    <!-- <p ng-repeat = 'artist in e.artists'>
+      {{artist.name}}
+    </p> -->
     <p>{{e.date}}</p>
     <p>{{e.openingtimes.doorsopen}}</p>
   </div>
 </section>
 
-<h1>Search by City</h1>
+<h1 id = "searchByCity">Search by City</h1>
 
 <div class="row">
-  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
     <div class="card">
       <div class="card-block">
         <div class="vividworknav">
@@ -30,7 +30,7 @@
       </div>
     </div>
   </div>
-  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
     <div class="card">
       <div class="card-block">
         <div class="vividworknav">
@@ -46,7 +46,7 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
     <div class="card">
       <div class="card-block">
           <div class="vividworknav">
@@ -60,7 +60,7 @@
       </div>
     </div>
   </div>
-  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
     <div class="card">
       <div class="card-block">
         <div class="vividworknav">
